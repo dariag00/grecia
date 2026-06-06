@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Grecia 2025 — Los 6 Meowlundus</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── VARIABLES ── */
+:root {
+  --blue: #0D5EAF;
+  --blue-light: #BFEFF6;
+  --gold: #E1A80B;
+  --dark: #0A2540;
+  --mid: #4A5568;
+  --muted: #4A7FB5;
+  --alert: #C0392B;
+  --tip-bg: #FFFBF0;
+  --rule: #EEF3F8;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+/* ── LAYOUT ── */
+body {
+  font-family: var(--font-body);
+  font-size: 8pt;
+  color: var(--dark);
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 16px;
+}
+
+.pg {
+  width: 148mm;
+  background: white;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 210mm;
+}
+
+/* ── HEADER ── */
+.hdr {
+  background: var(--blue);
+  padding: 5px 12mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.hdr span {
+  color: rgba(191,239,246,0.65);
+  font-size: 5.5pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ── FOOTER ── */
+.ftr {
+  padding: 4px 12mm;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+.ftr .group { font-size: 5.5pt; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); opacity: 0.4; }
+.ftr .num { font-size: 7pt; font-weight: 700; color: var(--blue); }
+
+/* ── BODY ── */
+.body { flex: 1; padding: 7mm 12mm 5mm; }
+
+/* ── DESTINATION PHOTO BANNER ── */
+.dest-banner {
+  position: relative;
+  height: 42mm;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dest-banner img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.dest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(13,30,60,0.1) 0%, rgba(13,30,60,0.65) 55%, rgba(13,30,60,0.92) 100%);
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px 12mm 10px;
+}
+.dest-num { font-size: 6pt; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.dest-name { font-family: var(--font-display); font-size: 20pt; font-weight: 900; color: white; line-height: 1; }
+.dest-sub { font-size: 7pt; color: rgba(191,239,246,0.82); font-weight: 300; margin-top: 2px; }
+.dest-dates {
+  position: absolute; top: 8px; right: 12mm;
+  background: rgba(13,94,175,0.82);
+  color: white; font-size: 6.5pt; font-weight: 500;
+  padding: 3px 8px; border-radius: 2px; letter-spacing: 0.5px;
+}
+
+/* ── SECTION LABEL ── */
+.slabel {
+  font-size: 6pt; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold);
+  margin: 9px 0 6px;
+}
+
+/* ── DAY ENTRY ── */
+.day { margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid var(--rule); }
+.day:last-of-type { border-bottom: none; margin-bottom: 0; }
+.day-date { font-size: 6pt; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.day-title { font-family: var(--font-display); font-size: 9pt; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+.day-text { font-size: 7.5pt; color: var(--mid); line-height: 1.55; }
+.day-text .alert { color: var(--alert); font-weight: 600; }
+
+/* ── INLINE PHOTO ── */
+.ph {
+  margin: 7px 0; border-radius: 4px; overflow: hidden; position: relative;
+}
+.ph img { width: 100%; height: 26mm; object-fit: cover; display: block; }
+.ph .cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(13,30,60,0.78));
+  color: rgba(255,255,255,0.85); font-size: 6pt; font-style: italic;
+  padding: 8px 8px 5px;
+}
+
+/* ── TIP BOX ── */
+.tip {
+  background: var(--tip-bg); border-left: 2px solid var(--gold);
+  padding: 6px 9px; border-radius: 0 3px 3px 0; margin: 7px 0;
+}
+.tip-label { font-size: 6pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7D6608; margin-bottom: 4px; }
+.tip-item { font-size: 7pt; color: #5C4A00; line-height: 1.55; }
+.tip-item::before { content: '— '; color: var(--gold); }
+
+/* ── INFO ROW ── */
+.ir { display: flex; margin-bottom: 3px; align-items: flex-start; }
+.ir .lb { color: var(--muted); font-weight: 600; font-size: 7pt; min-width: 26mm; flex-shrink: 0; padding-top: 1px; }
+.ir .vl { font-size: 7.5pt; line-height: 1.45; }
+
+/* ── TABLE ── */
+.tb { background: #F5F9FD; border-radius: 4px; border: 1px solid #DDEEF8; margin: 4px 0; overflow: hidden; }
+.tr { display: flex; border-bottom: 1px solid #DDEEF8; }
+.tr:last-child { border-bottom: none; }
+.tr .tm { color: var(--blue); font-weight: 600; font-size: 7pt; min-width: 22mm; padding: 4px 6px; flex-shrink: 0; }
+.tr .td { padding: 4px 6px; font-size: 7pt; line-height: 1.35; }
+
+/* ── GRID 2 COL ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 4px 0; }
+.gc { background: #F5F9FD; border: 1px solid #DDEEF8; padding: 4px 6px; border-radius: 3px; font-size: 7pt; line-height: 1.4; }
+.gc .gn { font-weight: 700; color: var(--blue); }
+.gc .gr { color: var(--mid); font-style: italic; }
+.fc { background: #FDF8F0; border: 1px solid #EDE0C4; padding: 4px 6px; border-radius: 3px; font-size: 7pt; line-height: 1.4; }
+.fc .fn { font-weight: 700; color: var(--dark); }
+
+/* ── H2 ── */
+h2 { font-family: var(--font-display); color: var(--blue); font-size: 9.5pt; font-weight: 700; margin: 7px 0 2px; }
+.hr { border-top: 1px solid var(--rule); margin: 0 0 5px; }
+
+/* ── FINISH ── */
+.fin { text-align: center; padding: 14px 0 10px; }
+.fin .greek { font-family: var(--font-display); font-size: 14pt; font-weight: 700; color: var(--blue); }
+.fin .es { font-size: 10pt; font-weight: 700; color: var(--blue); margin-top: 3px; }
+.fin .sign { font-size: 8.5pt; color: #999; font-style: italic; margin-top: 6px; }
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; padding: 0; gap: 0; }
+  .pg { box-shadow: none; page-break-after: always; }
+  .pg:last-child { page-break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@page { size: A5; margin: 0; }
+</style>
+</head>
+<body>
+<!-- páginas aquí -->
+</body>
+</html>
