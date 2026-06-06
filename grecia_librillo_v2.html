@@ -19,6 +19,8 @@
   --alert: #C0392B;
   --tip-bg: #FFFBF0;
   --rule: #EEF3F8;
+  --gold-dark: #7D6608;
+  --gold-darker: #5C4A00;
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, sans-serif;
 }
@@ -118,7 +120,7 @@ body {
 
 /* ── DAY ENTRY ── */
 .day { margin-bottom: 7px; padding-bottom: 7px; border-bottom: 1px solid var(--rule); }
-.day:last-of-type { border-bottom: none; margin-bottom: 0; }
+.day:last-child { border-bottom: none; margin-bottom: 0; }
 .day-date { font-size: 6pt; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
 .day-title { font-family: var(--font-display); font-size: 9pt; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
 .day-text { font-size: 7.5pt; color: var(--mid); line-height: 1.55; }
@@ -141,8 +143,8 @@ body {
   background: var(--tip-bg); border-left: 2px solid var(--gold);
   padding: 6px 9px; border-radius: 0 3px 3px 0; margin: 7px 0;
 }
-.tip-label { font-size: 6pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7D6608; margin-bottom: 4px; }
-.tip-item { font-size: 7pt; color: #5C4A00; line-height: 1.55; }
+.tip-label { font-size: 6pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
+.tip-item { font-size: 7pt; color: var(--gold-darker); line-height: 1.55; }
 .tip-item::before { content: '— '; color: var(--gold); }
 
 /* ── INFO ROW ── */
