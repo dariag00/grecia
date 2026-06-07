@@ -1,493 +1,1268 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<title>Grecia 2025 — Los 6 Meowlundus</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ── RESET ── */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  <head>
+    <meta charset="utf-8" />
+    <title>Grecia 2025 — Los 6 Meowlundus</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── RESET ── */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-/* ── VARIABLES ── */
-:root {
-  --blue: #0D5EAF;
-  --blue-light: #BFEFF6;
-  --gold: #E1A80B;
-  --dark: #0A2540;
-  --mid: #4A5568;
-  --muted: #4A7FB5;
-  --alert: #C0392B;
-  --tip-bg: #FFFBF0;
-  --rule: #EEF3F8;
-  --gold-dark: #7D6608;
-  --gold-darker: #5C4A00;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
-}
+      /* ── VARIABLES ── */
+      :root {
+        --blue: #0d5eaf;
+        --blue-light: #bfeff6;
+        --gold: #e1a80b;
+        --dark: #0a2540;
+        --mid: #4a5568;
+        --muted: #4a7fb5;
+        --alert: #c0392b;
+        --tip-bg: #fffbf0;
+        --rule: #eef3f8;
+        --gold-dark: #7d6608;
+        --gold-darker: #5c4a00;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "Inter", -apple-system, sans-serif;
+      }
 
-/* ── LAYOUT ── */
-body {
-  font-family: var(--font-body);
-  font-size: 8pt;
-  color: var(--dark);
-  background: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  gap: 16px;
-}
+      /* ── LAYOUT ── */
+      body {
+        font-family: var(--font-body);
+        font-size: 8pt;
+        color: var(--dark);
+        background: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 16px;
+      }
 
-.pg {
-  width: 148mm;
-  background: white;
-  position: relative;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  min-height: 210mm;
-}
+      .pg {
+        width: 148mm;
+        background: white;
+        position: relative;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 210mm;
+      }
 
-/* ── HEADER ── */
-.hdr {
-  background: var(--blue);
-  padding: 5px 12mm;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0;
-}
-.hdr span {
-  color: rgba(191,239,246,0.65);
-  font-size: 5.5pt;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
+      /* ── HEADER ── */
+      .hdr {
+        background: var(--blue);
+        padding: 5px 12mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .hdr span {
+        color: rgba(191, 239, 246, 0.65);
+        font-size: 5.5pt;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
 
-/* ── FOOTER ── */
-.ftr {
-  padding: 4px 12mm;
-  border-top: 1px solid var(--rule);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-shrink: 0;
-  margin-top: auto;
-}
-.ftr .group { font-size: 5.5pt; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); opacity: 0.4; }
-.ftr .num { font-size: 7pt; font-weight: 700; color: var(--blue); }
+      /* ── FOOTER ── */
+      .ftr {
+        padding: 4px 12mm;
+        border-top: 1px solid var(--rule);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        margin-top: auto;
+      }
+      .ftr .group {
+        font-size: 5.5pt;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--blue);
+        opacity: 0.4;
+      }
+      .ftr .num {
+        font-size: 7pt;
+        font-weight: 700;
+        color: var(--blue);
+      }
 
-/* ── BODY ── */
-.body { flex: 1; padding: 5mm 12mm 4mm; }
+      /* ── BODY ── */
+      .body {
+        flex: 1;
+        padding: 5mm 12mm 4mm;
+      }
 
-/* ── DESTINATION PHOTO BANNER ── */
-.dest-banner {
-  position: relative;
-  height: 42mm;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.dest-banner img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.dest-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(13,30,60,0.1) 0%, rgba(13,30,60,0.65) 55%, rgba(13,30,60,0.92) 100%);
-  display: flex; flex-direction: column;
-  justify-content: flex-end;
-  padding: 8px 12mm 10px;
-}
-.dest-num { font-size: 6pt; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
-.dest-name { font-family: var(--font-display); font-size: 20pt; font-weight: 900; color: white; line-height: 1; }
-.dest-sub { font-size: 7pt; color: rgba(191,239,246,0.82); font-weight: 300; margin-top: 2px; }
-.dest-dates {
-  position: absolute; top: 8px; right: 12mm;
-  background: rgba(13,94,175,0.82);
-  color: white; font-size: 6.5pt; font-weight: 500;
-  padding: 3px 8px; border-radius: 2px; letter-spacing: 0.5px;
-}
+      /* ── DESTINATION PHOTO BANNER ── */
+      .dest-banner {
+        position: relative;
+        height: 42mm;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .dest-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .dest-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(13, 30, 60, 0.1) 0%,
+          rgba(13, 30, 60, 0.65) 55%,
+          rgba(13, 30, 60, 0.92) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 8px 12mm 10px;
+      }
+      .dest-num {
+        font-size: 6pt;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 2px;
+      }
+      .dest-name {
+        font-family: var(--font-display);
+        font-size: 20pt;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+      }
+      .dest-sub {
+        font-size: 7pt;
+        color: rgba(191, 239, 246, 0.82);
+        font-weight: 300;
+        margin-top: 2px;
+      }
+      .dest-dates {
+        position: absolute;
+        top: 8px;
+        right: 12mm;
+        background: rgba(13, 94, 175, 0.82);
+        color: white;
+        font-size: 6.5pt;
+        font-weight: 500;
+        padding: 3px 8px;
+        border-radius: 2px;
+        letter-spacing: 0.5px;
+      }
 
-/* ── SECTION LABEL ── */
-.slabel {
-  font-size: 6pt; font-weight: 700; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--gold);
-  margin: 9px 0 6px;
-}
+      /* ── SECTION LABEL ── */
+      .slabel {
+        font-size: 6pt;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 9px 0 6px;
+      }
 
-/* ── DAY ENTRY ── */
-.day { margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid var(--rule); }
-.day:last-child { border-bottom: none; margin-bottom: 0; }
-.day-date { font-size: 6pt; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
-.day-title { font-family: var(--font-display); font-size: 9pt; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
-.day-text { font-size: 7.5pt; color: var(--mid); line-height: 1.55; }
-.day-text .alert { color: var(--alert); font-weight: 600; }
+      /* ── DAY ENTRY ── */
+      .day {
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .day:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      .day-date {
+        font-size: 6pt;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 2px;
+      }
+      .day-title {
+        font-family: var(--font-display);
+        font-size: 9pt;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 3px;
+      }
+      .day-text {
+        font-size: 7.5pt;
+        color: var(--mid);
+        line-height: 1.55;
+      }
+      .day-text .alert {
+        color: var(--alert);
+        font-weight: 600;
+      }
 
-/* ── INLINE PHOTO ── */
-.ph {
-  margin: 7px 0; border-radius: 4px; overflow: hidden; position: relative;
-}
-.ph img { width: 100%; height: 28mm; object-fit: cover; display: block; }
-.ph .cap {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(13,30,60,0.8));
-  color: rgba(255,255,255,0.85); font-size: 6pt; font-style: italic;
-  padding: 8px 8px 5px;
-}
+      /* ── INLINE PHOTO ── */
+      .ph {
+        margin: 7px 0;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+      }
+      .ph img {
+        width: 100%;
+        height: 28mm;
+        object-fit: cover;
+        display: block;
+      }
+      .ph .cap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(13, 30, 60, 0.8));
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 6pt;
+        font-style: italic;
+        padding: 8px 8px 5px;
+      }
 
-/* ── TIP BOX ── */
-.tip {
-  background: var(--tip-bg); border-left: 2px solid var(--gold);
-  padding: 6px 9px; border-radius: 0 3px 3px 0; margin: 7px 0;
-}
-.tip-label { font-size: 6pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
-.tip-item { font-size: 7pt; color: var(--gold-darker); line-height: 1.55; }
-.tip-item::before { content: '— '; color: var(--gold); }
+      /* ── TIP BOX ── */
+      .tip {
+        background: var(--tip-bg);
+        border-left: 2px solid var(--gold);
+        padding: 6px 9px;
+        border-radius: 0 3px 3px 0;
+        margin: 7px 0;
+      }
+      .tip-label {
+        font-size: 6pt;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--gold-dark);
+        margin-bottom: 4px;
+      }
+      .tip-item {
+        font-size: 7pt;
+        color: var(--gold-darker);
+        line-height: 1.55;
+      }
+      .tip-item::before {
+        content: "— ";
+        color: var(--gold);
+      }
 
-/* ── INFO ROW ── */
-.ir { display: flex; margin-bottom: 3px; align-items: flex-start; }
-.ir .lb { color: var(--muted); font-weight: 600; font-size: 7pt; min-width: 26mm; flex-shrink: 0; padding-top: 1px; }
-.ir .vl { font-size: 7.5pt; line-height: 1.45; }
+      /* ── INFO ROW ── */
+      .ir {
+        display: flex;
+        margin-bottom: 3px;
+        align-items: flex-start;
+      }
+      .ir .lb {
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 7pt;
+        min-width: 26mm;
+        flex-shrink: 0;
+        padding-top: 1px;
+      }
+      .ir .vl {
+        font-size: 7.5pt;
+        line-height: 1.45;
+      }
 
-/* ── TABLE ── */
-.tb { background: #F5F9FD; border-radius: 4px; border: 1px solid #DDEEF8; margin: 4px 0; overflow: hidden; }
-.tr { display: flex; border-bottom: 1px solid #DDEEF8; }
-.tr:last-child { border-bottom: none; }
-.tr .tm { color: var(--blue); font-weight: 600; font-size: 7pt; min-width: 22mm; padding: 4px 6px; flex-shrink: 0; }
-.tr .td { padding: 4px 6px; font-size: 7pt; line-height: 1.35; }
+      /* ── TABLE ── */
+      .tb {
+        background: #f5f9fd;
+        border-radius: 4px;
+        border: 1px solid #ddeef8;
+        margin: 4px 0;
+        overflow: hidden;
+      }
+      .tr {
+        display: flex;
+        border-bottom: 1px solid #ddeef8;
+      }
+      .tr:last-child {
+        border-bottom: none;
+      }
+      .tr .tm {
+        color: var(--blue);
+        font-weight: 600;
+        font-size: 7pt;
+        min-width: 22mm;
+        padding: 4px 6px;
+        flex-shrink: 0;
+      }
+      .tr .td {
+        padding: 4px 6px;
+        font-size: 7pt;
+        line-height: 1.35;
+      }
 
-/* ── GRID 2 COL ── */
-.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin: 4px 0; }
-.gc { background: #F5F9FD; border: 1px solid #DDEEF8; padding: 4px 6px; border-radius: 3px; font-size: 7pt; line-height: 1.4; }
-.gc .gn { font-weight: 700; color: var(--blue); }
-.gc .gr { color: var(--mid); font-style: italic; }
-.fc { background: #FDF8F0; border: 1px solid #EDE0C4; padding: 4px 6px; border-radius: 3px; font-size: 7pt; line-height: 1.4; }
-.fc .fn { font-weight: 700; color: var(--dark); }
+      /* ── GRID 2 COL ── */
+      .g2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        margin: 4px 0;
+      }
+      .gc {
+        background: #f5f9fd;
+        border: 1px solid #ddeef8;
+        padding: 4px 6px;
+        border-radius: 3px;
+        font-size: 7pt;
+        line-height: 1.4;
+      }
+      .gc .gn {
+        font-weight: 700;
+        color: var(--blue);
+      }
+      .gc .gr {
+        color: var(--mid);
+        font-style: italic;
+      }
+      .fc {
+        background: #fdf8f0;
+        border: 1px solid #ede0c4;
+        padding: 4px 6px;
+        border-radius: 3px;
+        font-size: 7pt;
+        line-height: 1.4;
+      }
+      .fc .fn {
+        font-weight: 700;
+        color: var(--dark);
+      }
 
-/* ── H2 ── */
-h2 { font-family: var(--font-display); color: var(--blue); font-size: 9.5pt; font-weight: 700; margin: 7px 0 2px; }
-.hr { border-top: 1px solid var(--rule); margin: 0 0 5px; }
+      /* ── H2 ── */
+      h2 {
+        font-family: var(--font-display);
+        color: var(--blue);
+        font-size: 9.5pt;
+        font-weight: 700;
+        margin: 7px 0 2px;
+      }
+      .hr {
+        border-top: 1px solid var(--rule);
+        margin: 0 0 5px;
+      }
 
-/* ── FINISH ── */
-.fin { text-align: center; padding: 14px 0 10px; }
-.fin .greek { font-family: var(--font-display); font-size: 14pt; font-weight: 700; color: var(--blue); }
-.fin .es { font-size: 10pt; font-weight: 700; color: var(--blue); margin-top: 3px; }
-.fin .sign { font-size: 8.5pt; color: #999; font-style: italic; margin-top: 6px; }
+      /* ── FINISH ── */
+      .fin {
+        text-align: center;
+        padding: 14px 0 10px;
+      }
+      .fin .greek {
+        font-family: var(--font-display);
+        font-size: 14pt;
+        font-weight: 700;
+        color: var(--blue);
+      }
+      .fin .es {
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--blue);
+        margin-top: 3px;
+      }
+      .fin .sign {
+        font-size: 8.5pt;
+        color: #999;
+        font-style: italic;
+        margin-top: 6px;
+      }
 
-/* ── PRINT ── */
-@media print {
-  body { background: white; padding: 0; gap: 0; }
-  .pg { box-shadow: none; page-break-after: always; break-after: page; }
-  .pg:last-child { page-break-after: avoid; break-after: avoid; }
-  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
-@page { size: A5; margin: 0; }
-</style>
-</head>
-<body>
-<!-- PORTADA -->
-<div class="pg" style="min-height:210mm">
-  <div style="position:absolute;inset:0;background-image:url('grecia_img_atenas_noche.jpeg');background-size:cover;background-position:center 40%"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,30,60,0.25) 0%,rgba(13,30,60,0.15) 25%,rgba(13,30,60,0.65) 60%,rgba(13,30,60,0.95) 100%)"></div>
-  <div style="position:relative;margin-top:auto;padding:0 12mm 14mm">
-    <div style="font-size:6.5pt;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:rgba(191,239,246,0.75);margin-bottom:6px">Los 6 Meowlundus · Julio 2025</div>
-    <div style="font-family:'Playfair Display',Georgia,serif;font-size:44pt;font-weight:900;color:white;line-height:0.9;letter-spacing:-1px;margin-bottom:4px">Grecia</div>
-    <div style="font-family:'Playfair Display',Georgia,serif;font-size:20pt;font-weight:400;font-style:italic;color:rgba(255,255,255,0.55);margin-bottom:14px">2025</div>
-    <div style="width:36px;height:2px;background:#E1A80B;margin-bottom:12px"></div>
-    <div style="font-size:8pt;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.72);margin-bottom:16px">Atenas · Paros · Santorini</div>
-    <div style="display:inline-block;background:rgba(225,168,11,0.92);color:white;font-size:7.5pt;font-weight:600;letter-spacing:0.5px;padding:5px 12px;border-radius:2px">18 – 27 de Julio · 10 noches</div>
-  </div>
-</div>
-<!-- PÁG 1: EQUIPO + RESUMEN -->
-<div class="pg">
-  <div class="hdr"><span>Grecia 2025</span><span>Atenas · Paros · Santorini</span></div>
-  <div class="body">
+      /* ── PRINT ── */
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+          gap: 0;
+        }
+        .pg {
+          box-shadow: none;
+          page-break-after: always;
+          break-after: page;
+        }
+        .pg:last-child {
+          page-break-after: avoid;
+          break-after: avoid;
+        }
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+      @page {
+        size: A5;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PORTADA -->
+    <div
+      class="pg"
+      style="min-height: 210mm"
+    >
+      <div
+        style="
+          position: absolute;
+          inset: 0;
+          background-image: url(&quot;photos/greece_2.jpg&quot;);
+          background-size: cover;
+          background-position: center 40%;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(13, 30, 60, 0.25) 0%,
+            rgba(13, 30, 60, 0.15) 25%,
+            rgba(13, 30, 60, 0.65) 60%,
+            rgba(13, 30, 60, 0.95) 100%
+          );
+        "
+      ></div>
+      <div style="position: relative; margin-top: auto; padding: 0 12mm 14mm">
+        <div
+          style="
+            font-size: 6.5pt;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(191, 239, 246, 0.75);
+            margin-bottom: 6px;
+          "
+        >
+          Los 6 Meowlundus · Julio 2025
+        </div>
+        <div
+          style="
+            font-family: &quot;Playfair Display&quot;, Georgia, serif;
+            font-size: 44pt;
+            font-weight: 900;
+            color: white;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+          "
+        >
+          Grecia
+        </div>
+        <div
+          style="
+            font-family: &quot;Playfair Display&quot;, Georgia, serif;
+            font-size: 20pt;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 14px;
+          "
+        >
+          2025
+        </div>
+        <div
+          style="
+            width: 36px;
+            height: 2px;
+            background: #e1a80b;
+            margin-bottom: 12px;
+          "
+        ></div>
+        <div
+          style="
+            font-size: 8pt;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 16px;
+          "
+        >
+          Atenas · Paros · Santorini
+        </div>
+        <div
+          style="
+            display: inline-block;
+            background: rgba(225, 168, 11, 0.92);
+            color: white;
+            font-size: 7.5pt;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 5px 12px;
+            border-radius: 2px;
+          "
+        >
+          18 – 27 de Julio · 10 noches
+        </div>
+      </div>
+    </div>
+    <!-- PÁG 1: EQUIPO + RESUMEN -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Grecia 2025</span><span>Atenas · Paros · Santorini</span>
+      </div>
+      <div class="body">
+        <h2>El equipo</h2>
+        <div class="hr"></div>
+        <p
+          style="
+            font-size: 7.5pt;
+            color: var(--mid);
+            margin-bottom: 5px;
+            line-height: 1.5;
+          "
+        >
+          Después de la épica presentación sorpresa que Diego y Mica nos
+          metieron en la boda, aquí está el librillo oficial. Todo organizado
+          para que lo único que tengáis que hacer sea pasarlo bien — y vigilar
+          que Fernando no robe cucharas griegas.
+        </p>
+        <div class="g2">
+          <div class="gc">
+            <div class="gn">Diego Arias</div>
+            <div class="gr">Organizador del asunto</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Micaela Pujol</div>
+            <div class="gr">Organizadora del asunto</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Francisco Pujol</div>
+            <div class="gr">Buscador de sitios únicos</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Marisa Higueras</div>
+            <div class="gr">Control de daños y crisis menores</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Martín Pujol</div>
+            <div class="gr">Responsable de mirar sin saber qué</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Fernando Arias</div>
+            <div class="gr">Catador de postres y ladrón de cucharas</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Gema García</div>
+            <div class="gr">Supervisora del catador de postres</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Sandra Arias</div>
+            <div class="gr">Rastreadora oficial de Meowlundus</div>
+          </div>
+          <div class="gc">
+            <div class="gn">Hector</div>
+            <div class="gr"></div>
+          </div>
+        </div>
 
-    <h2>El equipo</h2><div class="hr"></div>
-    <p style="font-size:7.5pt;color:var(--mid);margin-bottom:5px;line-height:1.5">Después de la épica presentación sorpresa que Diego y Mica nos metieron en la boda, aquí está el librillo oficial. Todo organizado para que lo único que tengáis que hacer sea pasarlo bien — y vigilar que Fernando no robe cucharas griegas.</p>
-    <div class="g2">
-      <div class="gc"><div class="gn">Diego Arias</div><div class="gr">Organizador del asunto</div></div>
-      <div class="gc"><div class="gn">Micaela Pujol</div><div class="gr">Organizadora del asunto</div></div>
-      <div class="gc"><div class="gn">Francisco Pujol</div><div class="gr">Buscador de sitios únicos</div></div>
-      <div class="gc"><div class="gn">Marisa Higueras</div><div class="gr">Control de daños y crisis menores</div></div>
-      <div class="gc"><div class="gn">Martín Pujol</div><div class="gr">Responsable de mirar sin saber qué</div></div>
-      <div class="gc"><div class="gn">Fernando Arias</div><div class="gr">Catador de postres y ladrón de cucharas</div></div>
-      <div class="gc"><div class="gn">Gema García</div><div class="gr">Supervisora del catador de postres</div></div>
-      <div class="gc"><div class="gn">Sandra Arias</div><div class="gr">Rastreadora oficial de Meowlundus</div></div>
-    </div>
+        <h2 style="margin-top: 6px">Resumen del viaje</h2>
+        <div class="hr"></div>
+        <div class="ir">
+          <span class="lb">Fechas</span
+          ><span class="vl">Sábado 18 Jul – Lunes 27 Jul · 10 noches</span>
+        </div>
+        <div class="ir">
+          <span class="lb">Ruta</span
+          ><span class="vl">Atenas (2n) → Paros (3n) → Santorini (4n)</span>
+        </div>
+        <div class="ir">
+          <span class="lb">Moneda</span
+          ><span class="vl">Euro (€) · Cajeros en todas las islas</span>
+        </div>
+        <div class="ir">
+          <span class="lb">Clima</span
+          ><span class="vl"
+            >30–35°C, sol garantizado. Protector 50+ obligatorio.</span
+          >
+        </div>
 
-    <h2 style="margin-top:6px">Resumen del viaje</h2><div class="hr"></div>
-    <div class="ir"><span class="lb">Fechas</span><span class="vl">Sábado 18 Jul – Lunes 27 Jul · 10 noches</span></div>
-    <div class="ir"><span class="lb">Ruta</span><span class="vl">Atenas (2n) → Paros (3n) → Santorini (4n)</span></div>
-    <div class="ir"><span class="lb">Moneda</span><span class="vl">Euro (€) · Cajeros en todas las islas</span></div>
-    <div class="ir"><span class="lb">Clima</span><span class="vl">30–35°C, sol garantizado. Protector 50+ obligatorio.</span></div>
+        <h2 style="margin-top: 6px">Vuelos</h2>
+        <div class="hr"></div>
+        <p style="font-size: 7.5pt; font-weight: 600; margin-bottom: 2px">
+          IDA — Sábado 18 julio
+        </p>
+        <div class="tb">
+          <div class="tr">
+            <span class="tm">Amsterdam</span
+            ><span class="td">KL 1955 · AMS 12:15 → ATH 16:30 · KLM</span>
+          </div>
+          <div class="tr">
+            <span class="tm">Madrid</span
+            ><span class="td"
+              >A3 3701 · MAD T2 13:00 → ATH 17:25 · Aegean · 3h 25min</span
+            >
+          </div>
+        </div>
+        <p style="font-size: 7.5pt; font-weight: 600; margin: 4px 0 2px">
+          VUELTA — Lunes 27 julio desde Santorini (JTR)
+        </p>
 
-    <h2 style="margin-top:6px">Vuelos</h2><div class="hr"></div>
-    <p style="font-size:7.5pt;font-weight:600;margin-bottom:2px">IDA — Sábado 18 julio</p>
-    <div class="tb">
-      <div class="tr"><span class="tm">Amsterdam</span><span class="td">KL 1955 · AMS 12:15 → ATH 16:30 · KLM</span></div>
-      <div class="tr"><span class="tm">Madrid</span><span class="td">A3 3701 · MAD T2 13:00 → ATH 17:25 · Aegean · 3h 25min</span></div>
-    </div>
-    <p style="font-size:7.5pt;font-weight:600;margin:4px 0 2px">VUELTA — Lunes 27 julio desde Santorini (JTR)</p>
+        <h2 style="margin-top: 6px">Alojamientos</h2>
+        <div class="hr"></div>
+        <div class="tb">
+          <div class="tr">
+            <span
+              class="tm"
+              style="color: #c0392b; font-size: 6.5pt"
+              >18–20 Jul · Atenas</span
+            ><span class="td"
+              >Lycabettus View Apartment · Centro histórico</span
+            >
+          </div>
+          <div class="tr">
+            <span
+              class="tm"
+              style="color: #27ae60; font-size: 6.5pt"
+              >20–23 Jul · Paros</span
+            ><span class="td">Aegean Feelings · Naoussa</span>
+          </div>
+          <div class="tr">
+            <span
+              class="tm"
+              style="color: var(--blue); font-size: 6.5pt"
+              >23–27 Jul · Santorini</span
+            ><span class="td">Alleys Boutique Hotel &amp; Spa · Pyrgos</span>
+          </div>
+        </div>
 
-    <h2 style="margin-top:6px">Alojamientos</h2><div class="hr"></div>
-    <div class="tb">
-      <div class="tr"><span class="tm" style="color:#C0392B;font-size:6.5pt">18–20 Jul · Atenas</span><span class="td">Lycabettus View Apartment · Centro histórico</span></div>
-      <div class="tr"><span class="tm" style="color:#27AE60;font-size:6.5pt">20–23 Jul · Paros</span><span class="td">Aegean Feelings · Naoussa</span></div>
-      <div class="tr"><span class="tm" style="color:var(--blue);font-size:6.5pt">23–27 Jul · Santorini</span><span class="td">Alleys Boutique Hotel &amp; Spa · Pyrgos</span></div>
+        <h2 style="margin-top: 6px">La ruta de un vistazo</h2>
+        <div class="hr"></div>
+        <img
+          src="photos/mapa_ruta.png"
+          style="width: 100%; display: block; border-radius: 4px; margin: 3px 0"
+        />
+        <p
+          style="
+            font-size: 6pt;
+            color: #888;
+            font-style: italic;
+            text-align: center;
+            margin-top: 2px;
+          "
+        >
+          Ruta del viaje: Atenas · Paros · Santorini
+        </p>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">01</span>
+      </div>
     </div>
-
-    <h2 style="margin-top:6px">La ruta de un vistazo</h2><div class="hr"></div>
-    <div style="position:relative;border-radius:4px;overflow:hidden;margin:3px 0;line-height:0">
-  <div style="display:flex;flex-wrap:wrap">
-    <img src="data:image/png;base64,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" style="width:33.333%;display:block">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAMAAABrrFhUAAAAh1BMVEXhxcfix8nky83lztDU2tzn0tPp1dXp19ja3+Dl3Nzd4eLr29zg4+Pl4OHg4+Th5ebt4N/u4uHm5ubk5+jk6Ofo6Ofm6enw5eXp6uru6ejq7Ovy6Ofs7Ovq7e3u7u3z7Ovu8O/w8O/v8fDy8vHz9PL28vHz9PT09vP29vX2+PX59vT5+ff6+vhqicqoAAAkuElEQVR4nN09i3ajOLLsTGZay/iabhxolrYVsBSQWvz/912VJEACCbBNnOzWOZ1O/ABUqvdLUdeDoFX/a/tyA1zUl0XHhwtVVOhf8luucwPEjf6/6W/5wI0i9ayCEVyU57JfxPWWS7RcCMFFO6CyY7hWV6qO9z/YEtBC/38ddiy5+1pRUVbnLMuKWl6nyVJ8O0rjK+es5S0TIwoEhet1PEF3P9kCIIXY6jre76YdcyBqOaFifPQixbxjnbjpwU+dREDHbQR0BpPd5e5HWwYENCbuIlkHIs4Fg8fv+sdvsgJLQC9pkpYbr5ILQIBFA7yt+18v+EOo4CVpuxL1XPAACzDOpQiQjz7uHwEEZGlWYa6YDeWrS0By+0XbjghghgKkeLhJpN4AqJOPFcvdl8LmfikYtS08O1eC3ALeAlS4QC+xfKNau84pLlo2KoKOESYAqVzi9jTQwOHu5/RBKZeNiirO4wcuErWSAZhEAOceBEgUFKjM6m00NugBYKq2kpiV0lFrmfjlIJGAO/LAo85BXpLjBzVNJDm3VUhwEQAIASQQnJ0ZSdO0SBCK46Sk4Wu9Dl9lUi3ULRsFC8hVEDQPMKsXUJmfHrtCpDSY4EoOWqAYWqJGaEELayJ1WtR1vcANpCcAAVRFJAsw96rdjerlCRDJxQkgf+BYmwg408w8ErW0dyRDCxzeRKSEHugDoAEs9YtGq33dVWnyZIgsMpUYmG6YvXdCi4mmCMucGNaveF+yD68kdwEaHTIQXwwD0YTxW1cS+BCxZB3EiqEkCkC7dpgr2uLCxgB/3uK2QERcDMCGSXnIYL9bLz2IdEnrIHALBNd2RW8MuRp2q3X1HIh4xdwFcq0BGRCxlwTqxQsmluwgxHsBVl0e0dz7gmSBeiL/QeRLEmYzCW6gWdG86HX4KBmRK2xfSd7iq2gDkAF1NwMgWgEGggcB0s1HvekZe227eNjrTPEUyAPh0BMYGaDAezSgBMVJzIn/eh8JCgEBwQfC3Pd6io5Yffko//DaIXm/TpoVar9Butq2ZguOEy6q7loqejp1wrg11ZO5AxAg6hAKOi8CMozMzh0lhRSeqyLzbWlj904Rl4tuB4TaJgdJYsuzB6P8mTjQalDUtBPNugY0ln06SAFYqc8T06wj9UiPAK0Ou7VbGOfh+jwJ0dsBFNfMIwv8kNFX6SEnOaqU/0PjvL26u4YO8A5QfW3EiBKqIGC7qVq0MWykzoK1+REIUM8DPu9WBPC0oy/JlEEmsR8shLSqBEn1aoH+pZ3IwMliQXNL26LPtBQUBXAdEGKSCMiCMTxCnSIPtia8UALHCOlPGqzpBYo2ZG0Od26euH7DAhAU6pTQEiQoEJ2HLbJaenvE/azLuQm8JHecUPszkgq8NxCjP/5UUzFSDAB+W6/y+VZRwEmqlNwILucqVQABt8L7dZeDpF0wGF4+vfKBCACTX5m//QPUdAsNKMCurTsRXYBSuBQOkLzDChZhPJkCIJrL2paPhgqrNgkCeOrMwoCYiu7eHBJn75d1uMWDHPpUBEBSA/x2rqjQPE61mQZGoTk3CVGfuqKNT/O1dBqGM/h6JNN1OwJAPYH3B7cGbtCPVPn9uDmwXsJ5EyCv8UsCF6SYstlaRee3i+QnnygFIrX63kQFXOiHkgpxy/pJL+Do8Riw3hCSlEC9csVPZ0psPA8BOijc39vygfkGKuBpvwZJCGEv+XUklK3QPssfiMD3bzkbEDDm27pyff22tFzIzxG6VayO8CQ2kCwg7Z/eCIDw3ei3r1qFEzsoHKFHfj2wDPcnPG9CgKR/EAN6KRxyWcOqxJpz0DbOn9cSh3Bw8bCTAP9oSd08JX4cSdO8Y8wfuqK+gJAFnphf4KFjjzEkOF9cv0TwBxVYOAiYpcSsRYsVqzhzeYRekpAqiM9zXHqNIPcTH79+KQMm93Ri+PWyFEjdP6UlGBfJqx3WGypEfP7A2vrbZ4RFopmB4vztxsynH83cP3PtI7M4Ph20FkPc+AfxXJwwPreNHGieEhaKOF/cClrXfahsnulc4hBlzoKQVBh4nUsL1q6IgOeExaKakjrNMCbByCira+J/a1FEtNfXA3yNATHkzfz9tg1lHhQ8KYcYaVEEJqCoK4yxV/AHLII5AkSbt9OXaJygYnYBofyvBQQ8KS5kJ0fBJ+TEIXvzsPXZ+6hTxlbVGhMMUnzOyNnD7mLFzHo+AlQynzVdI3HAyEgKvKq53yZKXS0BVtDrZKUtzV+y1KiLzU62+uZTEQC5Gx21rCCEB957rQPaUgLAf14pIOqsHvXE4eVwmfo8DItTnB1O6nU+Y69gfLx7qPz1DgSwwQXQgXtlGlMoiKGsgecOyztiiEMUU+4HbwmEn3RraqAVny0URsCznCHzpJMiuTFGanYpoAfg/bTKQ++V6lvSuW8W0m8BeIIZbCFgAqo+wtmdsGOEefySKDXRTBlAf0nUMYhGEVKmIfioItstCOiUSnCJIsAErEyOL+iUn6QzOKUE7UyJjNEYEskc4zrkXildPGGI51iC4R2Y7Bfz07DAMXrBFUqS44zJqZYKKesYEl0BC0qUNOg4Kc62ChE15qTU9RTGZqriz0bAfKnewJ7c15cC7N2ZtcvMKwWYdcjwNEIFaesavpDgnsgYPsQlF1hqHtHj5cECyDsRsMylnPj4WKSSvtlxJiR6sUHLzi2RRfFJu0joUFTnCucKfy/J6eXa0cHoJE/yBbD1yNg0wPTr1dUANqVKUUBUHMMWEDSb0L5oSX0uS0MAEDjd6NnHzlWeYglEyFoIvIDtdYDyHqNFuu6TU0oJxo6xLK0lYA/OwHSoyzNWlNKmKQgBZQZuC/DZ6H9SRWH0MsZABfDduAkQL+didNkgeMwH7ciIm0CT7FFThSFiGUS0ajQCxKYwt9ajApldeUaZRPSC9PM2ry8tA7YbHFfBW8GGTIkunHTsJV/uRJCJpmOVjp1vqovTevTYk+FHLx4gejF1/j22D64yHqrIoQB0KgClm0TckJFHSIrSuEJbDBv1QWw24SnuUAQ193C3nkRtNvQterq8xgqXUH9StUcS/vdrckVxHkp/xwdzc6M/nyMEDdOz/oWD9eSsXa+d7jT7SzRQzALF1rXe0V/fOq1o8xfkYQgEbzn09/oUBBjGq/pHGvW5UHnTJRqwlSEraCcCUS4qrcgf77/f+wtnzBvyRzGKYyt+/IyCQZAB6pajkDJPAB6hXNAiD9irhbJYPveIzZIr9sf7+CdY1ZdQL1pife/jMQAIUFEs61Zx2Vd0CX8Jhx8ZpS4wCED9H0tcGsfKrxsTK4D6JATks16e0Tza7sKqFHgIAeIvbmXHBr/qSpq5qLNuiT+8eFohIJlL3OQSouYwLEXJf/0lnanhLyer2l6cVSLHHNy3zy6EAKjimL+V3BjC0QgIfYnZIQXHiJS2lk3puXQ40BBZeBICvHAzAv5Dut/ffvrfUxJwKER18gxQo2jjv5WcPxjkH14rE0bAcZY0XEbI799/f+ve/mHfvW/+y1yDKBzMkq42Bipu2eOfhwBPDHBRIXyP/lE88Pan7923ES3SXPaE1yyzV7LjGFv7PBZYLRCaACAH1vX+Hnp3gOyM55+gthwYZeSHO4RhFsgr5fm2126LMPj1DpGCTnz7PV26SoKSP1UxtnkNpwWp8bQywWDgGFsE8PEO4YIQfEleEHSJlmi+iTP49r2rJAG8/THzGKEStW2jn0PtBUSUWFXV6SSOZOoh8vwoLkmP9E8UghaI7pocKyYW0PD+i6tJHOz9u6SBd4sOjEfBW9Ogzrjp0GWFmIQOVBz0Nc6hcQqZPqKPjgxuQsCli1HPjCanrRxWMYmPgBfx+9s/3T/R2yAJhJrRwX9QQIPig6EiI53qFdFHjuFH8hwS2ISA165oBnmsah0qeD5YGGfKY+jef4qxoEa8j7oAmmS4ePuDtGxQpCba6hGF1bjhvTVefCwNbELAIT/RjhghBb4KIMNYrO0/gv7njf/zTejmMwN/j9WGsNzfbyALme7HNE4zm1eNdPbAlUFIfmiObBMCAHr/PZeL0GbLtXv/9i7+/N69/fWj5/pmcHOE03UqOt1Sr2vTuUIK99QN9XeL42MfrJRwzT8uVbwZARZgRQv/9959/26GL/SpdQgTalf6h9N8/i6tpE7zTDv2ZHtK5/p0UA4BE4tFPk4S3IMADf9Oc3RMsBq0oUJnRs3VFabd74jwX7rUgL+/deJtIAUoDjOR1rSf2DAIQ856rxRWbEVGoF4mST4iSHg/Ano4KdLmem6AAC0H0u3X+1v0Qy/q219vdpgAGtM1e6R921CvDsVYFwREZgtJkUu1yKfRgfLxgMmjCEBxrLqOoO9MMbgUdC1RO03fYXVv73xsw+hXq1RhUQ2lkkPbhX1pX4iZxJAzRslJqcrrDpbyYwiA5mlYvbZwoNQOKsCxSiDJfY5+dT/+eNOK0EGA+q+ohgiqco6uxxd7Pdfp4g0wYvgGou07UED6yLdhyNSszof3jqT4+d79Vp9wFEJjrABA1IgA1XNmrQdtiUbu0FIQ1Q9h4CVWkso16VwDRziRUmk0GQSkYiw+rD3xUWQFJicwfG+HxEHUkewxU6uaBYOn3n4v6tQPpqvOuoqcyYC32kvLl84PvK+z3mMqU6TGKB4euBIR0zlkJlluEwH8aJQ5JNcPSXdMcNO2jeENQn1XDtRliSFjt0fyMAIBVafl650oQJd2mjQGoMSQAc/SNFVVp/Kha0n/DeCmqppz247twsRr6EgEVMtNKzukDSJtxNQpTu9AAcIkNG2HqeEKOjcOGdS65uxMm6ZR4eGmJu04T0I0Z9/N41hSJnpdKKbcgwWMsBVFWhRLdUlxWc5vB+JOhBKopOCV3VJRp+QsESCgfrbBjbW1rMHn8J1fZ1feFQHWA57TLJSIUTUbfKJ1sGqyC26QqIlaf88ftSDnLC1ZmrFGIqAZ+UawioZNmuNryCTYw090q8RI5n+OWFVNihYnCDwh6avF/wbvlrftUgY9Vb4h0xIRirA5bqo0LaQgqLlkhuGbrG4XNVrwDnsjoONFOieCU6lbn8HOZR0tYUoc+Vcf6AojIM0yTMtas/r5LEmhwYxkpEprKimgsVQFrxeN2lAT7x6G0PSaIptKw8Fkh7AelI7BttOfahgpRDxD66/wucQFTc6qjrjoBKUNFiluaJrJn40aOmoUOs0WHd5j4BY7eMmeSlGe2sbhGJYQwswZbVW/k3Lsw72PLc2kDD++Qt+skLYGyHrJ+rSQWCAUFymIw8EspGl4LTg+huTM7jLArNQeVJpch9ZyIfpJE7z7/dePVoV1vNWzoPxHcXKQ0hV2GxBQZE3dNFIbFGndyP035YbSsQnxAGK5J3ioYYdyWm+tMHUHGcXqCWDARAsTgLiaGfnzu5oQ5qMAnNaOhRIT6SNKkQkIyEpaNNIKpHVWlgXvi2zOGFdeUwBfUJfHgUJ7tqcadNoY66lWetWjR5my+lR8k/ejJ2xXv4OoYM3ObgFQIg0gkuIzkVsvEUCakmBM0rRMdZiUERVO9sX9cmi7Q33pVpugg60S9+ipGBBgz4WWzgmZPI5uhtLTZiQjkD8EJAhgASN/igamx0kvR23MpdIEGqO6UAZ8g+WysZR+8n/KJAkUKYaiW1wZOeB5vNYsUzmG2mNEYzDZYwnfXGM/IsDuoq47TifoRXqhJrhL/vJQpNRyBZgLauHKTT7mYNGn6vKSCs64kY5BncqdL+ouJWlZpCZBJpnEM4M8GfYZMGHk5FA7MM0co/wqblYM/n4BqbvxVMei3Mxz52pqbPfTpL+kaKQq0ykXc5Z/HuLkWiWGaE/g0wIBSC+AnYU0M0rJDIRCB5E0FC1DgPqePO+oYAP++wX3XDAVm22AKu5AQNNwQmcWkeTUPp4lBcD3f4nuHQphJSRHEPsxQoVUcJfkUFy18mwRGHG8FqyppearMtylKWkExox18hZW+znzhnyPY/EOHernT3r/JwST60e71TYKdIxU4NFOrNN48N4UCUgd9v6nwIW34vEKNpLk9vilTEuKU5wVlNd1Jk0g2rC6Us00dVfSodZyvZw879eGPAs99OaKuF5uipQGEAB1LBRfncUN9ihMzWXqwf8v8/mxiFyBPnNI6cTSZb4eM6kBm6KogeebpjwrF5qfpcEwhhK2B/3j1rRkW+DYo7cIwlDPEERjOOaWph2rFmBuMIzNr9IgrpEJmNJTDM5TWpdnKf4yqQkzwgodQhKU8DE5JG4phjnOju6wn/2mRosQArjUTW1HjEGAiqKwXXvlA2fZ4pUhTyoueqaG/D6ttAeA63KIBNQaASp4xOgtjz0Du2PvpkhZFPLlRJGpXaolAxe11OA0hfy+couh+ltkoap3pJIWB7jGUAZ6guIHpDgBj5KPcPgdK0tXPBbhtRFw0+iRIAKkKtCxPPmYLAXpJb1b+a+Uv9bZ+VycQ1LrKE0K008zGTCXEEDAWDLLQQ00GiHi8shBEcip6bpFE4QQoGUTTgmTiq3QXS9MKK89xjlKFqzQQrTGqrpMdXsGjtAY7GWkllJxDIvcsfIenBzCVEIuQVAGaAwI0nAo7+9f3pKnz8FpUF+eU3XS8HTsN5Nu8TCMC+pMHsn+Tqi3RVL6og2GcQABorXHQA9cyxdilwNctIdY+eZux6SDaKC5SZOemSEA1lBGHkl1Hvzx89VLBhDg9I6nfeEL31aogS4iOCK7kJ5mM1y7qKWBqOQqazxB51sgZp1vYt2qaxCiAOvXouirwTYPdjnxEDUntBmHcyhJSU2z4KNFsVeSnObhudX5pFE3TWy5QKXMr8H0V8bv4+l4dKY9AgQ2aW79J8OvD0W4FL8l0+dfjRlF0t6jaRADBVgq9ZDD2aNytzCJw6GDxGgwztodKuImbLBuEkTgmPLJULABamX+jf0dewy8PesBNXQwB4abC/F4kBO5GNigBdRjBEigP3xvyHfXl7K5nBDKCbnfailwM5g/ihJGw2CHZOfFDu1tkCtaCJKsqqt5F4PhTjr4gbzGKhIMCYK7TVeUlRUex1EIMd54jyYxJ1e7XkVltICKzdDaSXP3pS5GTIMc4G0LJ9Gdz5AWtOj1tujkiUzmsvUtRLPRzPeAm0Vq19rOHDUo6vP4YObMyK4/dgCin/0RbBRDWqTXsSi+yYRDVdaVCSktbjW9tXwPBCDkoGCtimRqB9R1ScAMplkDlR41qfszMtoRAQzrJgCz7vxGEzZORfpyjK15lKKvp9ilUdKZQ7EWaPE4Q6KQrl/RTOpc1JGEXM0h57XKEUk5cN/IuwRpfXcsxou3lcR2RsQeRcEOAtYeMZobTyKlRVFPS7l1GFCVBPJKt4HwRxvcUTFBf7pPgwSycmlrrvF0igzEeGmoBVRVgMPBKTo/uoNdMMFAuhMTjM7xqos9mSmqkzTBHlhV79C2Ndd1WgtSG6FjnEh31NeRavdpuxXj2V6DZAcuOMrbLRJVZGs+lmoBujhSWgpCUIyChud/56chg8fmJ5M5x/W5BUDZbn2CRzPZEsoXFjWhM1GyNwg9rQw2BgSQyGtyCq0/tsY0r50JnTr95qmRKnvwweAXLStCGwGjQbx2zEi9zKtjBrdd21HpHjuRFyWzYnrjYr2wLeHgIMBe4CJII3kp0jB2Wq6qiYM9eD411uUeZfBjpe2yXrEQQAeBtH7QDKsvC9dFAwJWDYUjsQoGW12bg/bRBUhfeEUP9AiosjTbzAEAhC7ZLIne1g3h2QJnQ8pF6ETbYePcqTXQUmCFmBQCcJo6wwK3IEDgjk59LUvpaem+xUlC49xxcVZPW4h9BmdAcm7VVAEEpNPjD7YgANikl6/ImFvNeFKeNkU2mXXxaHTqSGpL71itD5JtMcF0Ngp00/kq0osfzEy97JM0j3UM7ojU+IVt9fyHcRyXQgDab4TUZUNUuEjnkyA9LZ0+DEw3uG2vmuGKA2SwTTP0KhzGoGwNz5t78Xafj/C6alj5wuJssUa/B9JON4pZBwKgK98c4hzyelK3yD+5J7tbsIvw1tGtgc7UojD+fAjgG87Eke4gnqmB+3YJFZAs4r0S8HHAUW/JXdYBuZ6EuAbZypsY2SAEectbvNucJ3TOi4bqvBua1TegPNdMcleP0FUb26FTPO9FgLxqi/dp60ZUCdPjSYdZ0YywRiFF77m+ph64KvJkK70IwBt4QEA8+57nmUMeGqumwcp838UDB/PAFaQsZ1fwIoBkvlfd9TOKZ5VtyaUS98mqJbDqiJYvHXo3toV6csVXuxDYWy0u0uUx4KSuwYSfWNm9B7B3j/cYtFuiOHQVwWAKso8OUj+bQXz5EEAI4cFh8EKI3nBx56TGPavu0c5ogVX9s8QB5WJx1HW6Gt47cx4ECBUQErVfFDLaFEO9gG1nxcPhEvsiwHIWQx9BsZprvWT1HebbrNHpQUDT9kudvQWztYntOVB7saaxZedpD0OEN0xZSa6OBly88bz5Tn/cgwDVrCnkT6uaiYoOIvfT6ervf/1pF3Zok27n6VfDLZcNa4TiWfWkA/HUvtV+kq9niOryplLxACWiqSiU984/qSeHVeOTwWd2loFxHzB63OgoXRRos8PLAoawzw3BxfTg5Nn6pVgcraz2oVo3P5iWtT0kizPHQL/kowBTiI7qwIHB4zX+gHlJgotBPzX7z7/TdtA+B49ZFTT91CqfFjjPPx4A1TMBs3f7xzsN/gHaSxSo7oCdzmK2VGpvcEfdvPm3HmYsr1CAGRgGR5abPrN8GJh82gsBYAjSna718jr0YPaPF3U1DMZ2J0AMUm3QA35M/OvN+gM2CTBsWn+SvQZglTubVsaz7HVmpE6VbOphzitvajIIMqUQWZE3ifcA9R82ArrKEAwkg1DOKN3ngcu9J2wnOWfV4BZGxuQVWIqyGmd6zOFAAqdWS9849p/I/uuPf6Yv8fZQETUrqPL0gd0O8bKveA/YF4x6g5erKflcm3ljUj0ei9iRRyiKd/H29y/nFbh6rvqq2PPOj57D1gZCf7m8VQF2tH73NoqLt+/dT2uWbsuLJE7y02VhJsITAPHrsmVowBsPmHkdud7L4JliP791f/1tv3B50ilBC3BsN1mP/oDI7GO6qCH2fVhRgeje9EjpXpZu3f7XTdt0F4AKW7XLkb9aPPRQVynrg2QAoOr/OLQVby31SG5znsrtn2berZxA7EdAyPOOoSgkMN/o+5+/On14/Y+/3qCGJhSHncCVbl4S7MBmlaiarNc76AL9AoHML2Q/44BvJN7ev0W/xbd/uvdf7B1G6W08LGv7DCe5pu0+kXYjVz8WQMAS7+Q4TxLP8ZLKORS/lCz4W5lIeztG1U0NYeQRCvBqcKfkKygQFXx7X6Cje2Et7OWCah9ZVwOhlhlPZv/YOlHZBWHY2xb7np2s3ELvmAUvgAwMByd65XMNts2tN3OHEaBtQ7YzAWim49u6q47m0/4SjSPps1pt8MDFlad/zdG8isDs/NvfQ8x1R0C4L2ncQli5MUgCtYxkqB70ZofZOq8lnTMeX/0OB0gdkov4z00L2wyHIUm4XnlzGp7ML86RsnXke4k3M9Ssx/ZdBjjJZ6MfZtINoH1yp1Uj+HjDwZX+DyT5S6xCFl4WEMsISBJ0ckdIojvGt9wBCgHisMF6RrHupeXBxp742iRg7wVlwFIUxvUgy9cnHAk23nfjeIRETS8Il5ux6hprCggdf70Qh3SNoNsW8QioJNHGU+mTYEmEgvJiWqsj3Qvjg7CoceV/TgJ4PuHyxMmOjrGKyGxMvGw1sCMRRECQCaZGoIg9uEKJopP2BvdtDZI11rwHooXjg4K4ljbxkLFSM4XUR5FV3YL0qeP7nh0MGBU7zFB0QIXEAhhgS/pWJ2zao/oMesmLi6gG3z5Z4aG7QBVg7B5mjNQeqrMF+ey0wAXqReQIde7DDp/0uGj9XrX69XsAcs+7xJkdAATAfMDWNx50qZEx7/KjXZSCcKnj18hUY4i9uZU+NmUkAJoC1Pkn7XxE8hIRxxASmMcn1O7vv1Hqyh9xFLWSATAiTx8JNUHA4h3zkehHACOc7JTKdOG4vfb2FojUSepqVCLjsyNjF7uZkSSBWamgtJI/PyJ+C0RMMb6alOpKAKFmwS9+eV7U+d8HkV5/a58B0GtByRehnpf8dH3GqchPAN04qebDim4yJl8hxR99eIXWWYvW0X8tOrQ3qE+E6yQ7zMzCgDmIgWdG5MTPcggn8Ph9I032SgZqdThBQEiib2lI+nhYqbPeAJEZI8QUAXgOS2CB4mfwiP675L0fImiH50xRAPDBdP1d0PyO42cEgT4comEuiAY4KmlKBcF17lK798lgI4D3/yZyIBiGRh96EuBzIDLHwvY/DBk4CPjws39vBBQffYMZ7oNInZJnIQDGxU7mq+0y3mc/iGOoTd0LA8YOUGSgt19o09ihgU/S8l4weemdZm0oO0CME5KGrXdI4APc8LvhYLZmY3B4FSAszvgoCHtj2CGBL8QCcT+dYq/YGLCApH3BpuKv/wX6aL8QAoYjT/bpsB9lADenp3jjo19H3VsDgnZ6KIMApsdkaQaYNk/vxW57QN9BdH2wgDgppDi95k5ucDhlZHp83B6n2u0E6KKn/InikTnUkpEg2HeEQrYRATA0vwMWYOr8IAsBX8gQqtokKTq5QY/YoMcKTBsUI9Bu4xkjHPoeaAtnQkpecOwAdG9n/O5gDiY9PdCapdtICwxLRiMC4MQEGBBGqIDDIdxkEY/jbq/y/z0APZBwtKeuwlVGCuhUMAQcYuE9Qu8za993BCuzrWSbLQSHphFvvvh/wfdVTaaubLMQMETD1LC8uUFw/Uoewf0wDjpTfGQhYFyy4N5T5D4iM/VssMaPa3fKXySluWHCCPkXsojvhNg5vLPSJTIe0EpATM4T3Tvb+wngntunRuAHq8SULHRpYO/ijCdDjCatDqqKNIwA8JInL30hm9iCjeGxnBaTE+1VrHMBAc5JgvpoqS+pB1C1pbO66phVQAug/ckwAianxnM4Z41+8FrugvgiWL5WOxALycHuFIng/IBxze6fvik8XwL0aYyLGADazyf1fbr8ZQEBk8UDfFExqKaHLhXRq2KW3NECvVm3DQE9N+zbArIb5LDBS2M4hxLTtkfB4OJvRoA+EOUJq7kH1GGLC6eVKQRoBKnzPfhxYJhoaYj0CDpt+lVNIdO8ENbSsO+0/6NkNidHmwaocnXislQcXxQDRr/7PfYqfj3EJFTUHgVPdXZZQBsFX5UEjIL3igEgf4joBBgkWpsTMmBAZc2/aklE7+PN3ojxS3WFKehH6v9mtDxI3eICqKH5UkkyGzQdi7mWGl3YQF9L1Hqng3gwoCjgq8bFtBi8x06LaFNtUwTaGNooBJ5tMsKhGte7bgpaYIsi6GFrPP7ZJhO+t1P5VgRsTUp+SL34AsTsTjM9okwdsbsZPr820A/3tqdEcK6K2CgGAL5SpnQPiISaJF4vT1G14Ku6A/dCxIU+U2xtdN4Aew+N/WSIehk4GkT9aHFBvWby/xgJDAjo9EQ5VteE1rgTTV1zr5X4v0oBMNy/ZkYWtLU+a4x4pgvv2Sb/BaqNo64Zj1MQs5MVhGdo0I59MvEjpnXS7GFvRp1nifZ+zw9b2OFo1D0gER19fbxgNFqzA3342X/C3+1w0bz6eMfI2okqXvx8gQ4hsxUPXycaz9Pg+evplOdFkef5pepDDMTXQ/GsDNHhFKQ1/SCPS4ExIDI9MKOflk88JPKksMBpIRelTxJ7nBd7Ieg5Oqw3g3g1E4RLB43tCIeFVAwyHJAHT/3bcP1X0ko1yAK8dBzWS2dnMj/J280XmK1lV6xDntc7PUE1cC/qBMbc6+IhKzlMKpcRAiOqdofpxgwn/KI+Qg8EfGekUnGRygxVtXdDHSvQMQg+yxweziBKhmGFKhp439XaAQGBFbkmgK0PP6FOwBzE18FIZHThQ3AOVfzeWl68hoCjg4D+JFb22nxCmvyoB5oQJkRxUkeAjO/dm6ygIwIC1q0bMceKC67VS3x9PgsUHYuPR/uokIdzNLr3ABAQPBkWOQjgTPrJnxURU+xYwvj6cq/TfI7KwokW6x/5dMqQ+KSYqD7GVYseU+hC77tSnLz2+33gVAACFlR6Ox0p0NVP0n9TYBbVNw9I4ouLugYQEJZoblWVhs+ZmhHrbSBwoiHidyNAj/eyqPgEhlCYAq4eV/FzEDBoZFr0xzPeYf3wufDIgQXCQ9P4/JyRz4mJeib73y4E9UUmSTvQAqEoH4IhMtOAyOfUSVk+uSrUoPccYaJoZzpmL4LxmCFuUqNRSmf9n0MA4wTTJnlBbbImiVHlwc/Bm9+P5D8S5GuFmYuNgM/pGUi6psKXIt5ao+Sr6QTfTsytp4isVhu79ZWfEg689dAi4HY6ea30i41o3a537cFPsgNuBPBzrBJqoOTKP91xUQ0qQG6C7AvEQ7dAckoglqXXli9ojEis6pOJFPzvIAFDuBvG69N1ue4mjvc59uwJAKpjvbAx2iJYY8cg/KIl43MgW8yW/wesnaqdiaL+xQAAAABJRU5ErkJggg==" style="width:33.333%;display:block">
-    <img src="data:image/png;base64,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" style="width:33.333%;display:block">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEABAMAAACuXLVVAAAAG1BMVEXU2tza3+Dd4uPh5eXm6enq7Ozu8O/u8PD5+viduaEaAAAAuUlEQVR4nO3WMQ6CQBCG0UUgWhorb2BLaWlpa+cN9AAWtEaNe2yBS/wW711gvkwmLKXEdLXWd258Kecp4JsMOEwBNRmwngO2wYB+DhjSAcENNLvwDbTz/E8wYKzhDSzz6ykXcF0CnrmA/RIQ/BT2NXwEzXgLX+FqSD8Gpb2HA0qTDijxgOMlHNC9wgGb5Gu0BKQ30DzCASX5SwYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/IkfuPsus4P7H+YAAAAASUVORK5CYII=" style="width:33.333%;display:block">
-    <img src="data:image/png;base64,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" style="width:33.333%;display:block">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAMAAABrrFhUAAAAQlBMVEXU2tza3+Dd4eLi5ebk5+jm6enp6+ro7Ovs7Ovq7e3t7u7u8O7v8PDw8O/x8vHz9PLz9PT09vP19vX2+PX5+ff6+vhBMZLoAAAKG0lEQVR4nO2d69qCIAyABcRUCuN0/7f6AZ7QtE/NNIT3V/WUuTG2MRCS5CsgKUXWvARKKSnZlqvA5gVVlnT9JYDU/21/jJpPoKgvpghWAr798Qdg8w+Vvjy6K1KpEkCB/v/VGICbF40C5IY7ARgi89MUtB+U9bUoSDB4+9NPAPUd4wSXBFMKk81/ZdvoWV/uvu1ehGnzCnVvlaJSse8Jb6nVLKriw+sg25FAZWXYds9ZmpRCld17qIoMfMP4O4M1r1uj3U3PKEUfXAs6LQ43dMZFgMx5k+6tgI9ARJED7mTwF5WRn/bKRhtc+G5gkf3/pc8ZmJY1Acf1Q/zy/SMBh5siUDb8fi3QrqSkh/8lREwRWf7/xUM4xxdtb350boc5nzM9ZpAAWn4rO/gW8LanlbDfyVmWALRzuSmx2+WSpCjZnX+ath9HylLANo2OJ2G1s4bKG88Lmzx7nyQDtcYv1SH54g4g9cnweAxtaiWZvqInbsCMtTl1qjwfIZq+ZHrV8fniJgqmnshUSXbpA5CYvg+MX1Vfr5PshTF+pniSgs9yJmSbHJihC2nqeLvc3yEUur30MH97MIBFWanmNeBp7Vtngysof8044M3esNh4X6hS6kmfzifAjF+fM18Hwq1u/AjaD8qt7VIXLQdez5bx+Lvv/5oRoDva6AaLdnJA9Z/VleyZdLDRl/wxI9jYIClTaqAARJ4Y3l9Mwvmj9uu75d/2qntebDk35WI/KrBs3tKZm8K1zhjhZLdBGN40XfYpzcSQma2TQsi2C0AIkJbxzR2h4l6AXUs12q8enXtD7Bi/5FxwxwfoVPDYAh7kB/8huA+MXwhTtz30DkbAT+Z61oOk0/pGAXwYBa5O4TQ+Z1oDXASlACBd62fc+oCQFDDo/9YC6o5w9n0dReb2fm0BE5ng1UCF42LTRnAhuFkuIZncqID0V6a6/gX35RIImQ162vKZ6BtfbukC4FcmO//lCbviju31gknJpWqXTNkwyPpM8IKkbc5qc3/GmRsGbCIoTDJ86j1+gX58fGtfWGkZH8mvGmM45za/AEBpgU1uM64QWQOQ4lX+i0WBbsQ+ru1nffS7tAJMRdP4dzYuW5Vzohue5Jy7/QKgglpyLf04TuneP9f88kHnSoC+8jq8TMWU/6shJw+HjwCwzgL6BKjlcSUfMM2Nsi7zs0mw1gNxFeBNZruNStt/1/CiDoUE3puPqPBlJnAjqOBa/tbihcEYAoX1Ol5Gd5pf/03QU0pt/pJ3BiCbPqDKtOkA/qyJ2YD2dW76r8fB0pSBRB8TH5cbBwyAQIqu/+uRjx4I695grKDVwMOXBTFbQawfAOihMNMBUQ+BRZsVSOrN0H4juO3+VlwjP5e2JNJERY+WQmyjFGqgAd30gvd50fPyCkhARhwN2FqYNYR6ekzmHz2E4wnuTLBteW6MoEmNyRGP0ZwMVCN0OOyCozyoE8AT9QzGCtAJkfWNpj/wg5Z7nPm41KsCbDncZAD0uETwpyxAtatA4I1fPRFIJnyAcheZX98HTlhAGoDUDmgs/48tc/s66Uj+KxcAJimG8nv0WNBOPIcK8OaZmL0Y+cBrV0CmSAM3gIQFbgCjNCi853GLwA0gGcwJ8uBC4GhdfAAjnzHYlf/SkyAzuKtjA6h+TdD1ARFeBmABxdUSIHhfOZy1qeCF1gDQ1Y93615w+/9b3sDWJjPPaxWAgFj7ePu1gj9gm7ZUvAzQhPXQanoD0KUi2hYKsTYMXgyAtj4tfhFwdaGcZgPQqx0+9gaU5tFXT7a5+QYw0LJeB7rWsG49aZhlzR5T3wpuatPFrHgL2AU2T3+HnAbZ+l7IiXDoUQCYvco37q9/Bert+sOV38aAoIOACNwA6h1Qzr6L83i70V0I2GnerTtHXgEzFD5j57mfAQaeBNo0OOBhAKAy6BgIqXnWMbxVvh03uwNAsDEQlPWzrsEqoFvmw660zmEF/WrXUGfG+8V+gc4JOMs9A40EqOo0EKYCmmpIyBWR/sGXQIui3bL/UEeEOPAe0FlAqAbQR8Kbd0fC7YP79F+Y2RALXQFNHxCEhLlEIpVdFhCkD2gOhjj4OIrfAdQeIAzjnxjtABKO90N0splxQElQ5+NgWvU1MHy/9uaXQ+AdgVs1LoMyHowGuj3wBkVQFMxAqMv7BxKDUKri7VlQFQ4y4+lG/oFWPzv5g30qoh720ixQ829OQ/u1GbCV20F+doI7ZvIE+QEAKJ1cfwEQrpTEAKQYIrgkGQcfPtcHTvB+ZcXpZKZZUjVgSduiwr/KfZ5TKR5kYAIAp4gPxV+2Ss2fg6h6hEwrs8uwc+twLLyaP411FnCbO8P5x7CBBz8epN1rPZs4kmTD9qOI/Jo/n6ERURKBEUS3vCJ5/hgrQIC1zg2yo3bt/ZROxgd5aCqac5nnIwU807UVGYB9cQe9lJJqBVDb//NMDmJACqoV8kAGBTclTJh5kNS/dnjr87LM1QACa1Zqpl0674MZTCtAUzodgSK6vEebHaw8qt/MKkCLnedtRAArdmE2CvBoQPtGAdr5tUawwqND23c8sP2GtwpQebMv7ZtT6WAy2NcC1FmUPynxvPC2PJmZeRn+Zj8moijHEOC8/krRFDU9yYI06u2BhEqYtOhNczZFvGfV2EhzNY98QE7npa9lKfP5aRlQN7hMH/XUZXfAtT9d4CXtfaXMB79oc0IgU9rIX5qzzAl2DrbRg8fV6fM5vO8BlnzgAu6w2aOsXbvkREuXe+XHfKaYuPexAgZNCUz1siKU2YX8Ms/KmUsIP0Lh//IrMm5KazVm5FA9MjbzI+yLG1ygADY4lk2HPCqVFLk2g6ry/zzfBQqQuePTsXoS+cgpKWdlt0o7T6KVLFAAz53qFlUPyccF04nfnCfRShYoQOX3rkNjJam2//9/40cISN4qoDuymeR6bGxDgR7pPSZKphP44gNnFGAll81BvfXZ7VWJYUI5WSa/5woQggkttai1wHl9eHGV52U1+f1X/FnU99L2zVnd7eGktv1bh0/fen4Hj1a0vIgkmM7xxLSbW6wAf3pA8niJ54KzGS8vyfTnr/gxDrIo8dqqfObA+sdSA/DHA0w7QTmhFPPxgqGzxZ8sKJlUgD2m+fVjnQIvVIBPBjAdBqckrf5Nf1v82u9lsVRD+ycFEQVAE5qSPkwHOSyUnzvy86wTsT7My+0vzJ9qYM3/opvCH8/at3TUwCiFIAH1Cj9Js9Kv5k/eKICWd0oJNaM6kBJUVwBnpwiNg/DK93VYE76NK1tV8eLIAMLTi8ksN3rz9CRvY9TmzhG5YZQWeqx315KefVcHAketesZSvUgkcgV4oA+3d1ARUvCYIsaPSCRyQQC+2ql1K0mlFP4sevsGPj4HE4lEIpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKB8QcGnFjfwUWUpgAAAABJRU5ErkJggg==" style="width:33.333%;display:block">
-  </div>
-  <!-- Atenas -->
-  <div style="position:absolute;left:48.2%;top:21.1%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
-    <div style="width:9px;height:9px;border-radius:50%;background:#C0392B;border:2px solid white;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,0.4)"></div>
-    <div style="font-family:'Inter',sans-serif;font-size:5.5pt;font-weight:700;color:#C0392B;background:rgba(255,255,255,0.85);padding:0 3px;border-radius:2px;white-space:nowrap;margin-top:2px;line-height:1.4">Atenas</div>
-  </div>
-  <!-- Paros -->
-  <div style="position:absolute;left:65.9%;top:42.8%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
-    <div style="width:9px;height:9px;border-radius:50%;background:#27AE60;border:2px solid white;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,0.4)"></div>
-    <div style="font-family:'Inter',sans-serif;font-size:5.5pt;font-weight:700;color:#27AE60;background:rgba(255,255,255,0.85);padding:0 3px;border-radius:2px;white-space:nowrap;margin-top:2px;line-height:1.4">Paros</div>
-  </div>
-  <!-- Santorini -->
-  <div style="position:absolute;left:68.5%;top:55.3%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
-    <div style="width:9px;height:9px;border-radius:50%;background:#E07B39;border:2px solid white;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,0.4)"></div>
-    <div style="font-family:'Inter',sans-serif;font-size:5.5pt;font-weight:700;color:#E07B39;background:rgba(255,255,255,0.85);padding:0 3px;border-radius:2px;white-space:nowrap;margin-top:2px;line-height:1.4">Santorini</div>
-  </div>
-  <!-- Ferry route lines (SVG overlay) — viewBox 0 0 100 100 = same coordinate space as CSS % -->
-  <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <defs>
-      <marker id="arrB" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto">
-        <path d="M0,0 L0,4 L4,2 z" fill="#0D5EAF"/>
-      </marker>
-      <marker id="arrG" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto">
-        <path d="M0,0 L0,4 L4,2 z" fill="#E1A80B"/>
-      </marker>
-    </defs>
-    <!-- Pireo (47.5,23) → Paros (65.9,42.8) -->
-    <line x1="47.5" y1="23" x2="65.9" y2="42.8" stroke="#0D5EAF" stroke-width="0.8" stroke-dasharray="2.5,1.5" opacity="0.8" marker-end="url(#arrB)"/>
-    <!-- Paros (65.9,42.8) → Santorini (68.5,55.3) -->
-    <line x1="65.9" y1="42.8" x2="68.5" y2="55.3" stroke="#E1A80B" stroke-width="0.8" stroke-dasharray="2.5,1.5" opacity="0.8" marker-end="url(#arrG)"/>
-  </svg>
-  <!-- Attribution -->
-  <div style="position:absolute;bottom:2px;right:4px;font-size:4pt;color:rgba(0,0,0,0.45);background:rgba(255,255,255,0.7);padding:1px 3px;border-radius:1px;line-height:1.2">© OpenStreetMap · CartoDB</div>
-</div>
-<p style="font-size:6pt;color:#888;font-style:italic;text-align:center;margin-top:2px">Ruta del viaje: Atenas · Paros · Santorini</p>
-
-  </div>
-  <div class="ftr"><span class="group">Los 6 Meowlundus</span><span class="num">01</span></div>
-</div>
-<!-- PÁG 2: ATENAS -->
-<div class="pg">
-  <div class="hdr"><span>Grecia 2025</span><span>Atenas · Paros · Santorini</span></div>
-  <div class="dest-banner">
-    <img src="grecia_img_acropolis.jpeg" alt="La Acrópolis" style="object-position:center 65%">
-    <div class="dest-overlay">
-      <div class="dest-num">Destino 01</div>
-      <div class="dest-name">Atenas</div>
-      <div class="dest-sub">La cuna de todo · 2 noches</div>
+    <!-- PÁG 2: ATENAS -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Grecia 2025</span><span>Atenas · Paros · Santorini</span>
+      </div>
+      <div class="dest-banner">
+        <img
+          src="photos/acropolis.jpg"
+          alt="La Acrópolis"
+          style="object-position: center 65%"
+        />
+        <div class="dest-overlay">
+          <div class="dest-num">Destino 01</div>
+          <div class="dest-name">Atenas</div>
+          <div class="dest-sub">La cuna de todo · 2 noches</div>
+        </div>
+        <div class="dest-dates">18 – 20 Jul</div>
+      </div>
+      <div class="body">
+        <p
+          style="
+            font-size: 7.5pt;
+            color: var(--mid);
+            line-height: 1.5;
+            margin-bottom: 5px;
+          "
+        >
+          Hace 2.500 años, desde aquí salieron la democracia, la filosofía y los
+          Juegos Olímpicos. Hoy el Partenón asoma entre edificios modernos y las
+          tabernas sirven souvlaki bajo el mismo cielo que vio a Sócrates.
+        </p>
+        <div class="slabel">Itinerario</div>
+        <div class="day">
+          <div class="day-date">Sábado 18 Julio</div>
+          <div class="day-title">Llegada — y la Final del Mundial</div>
+          <div class="day-text">
+            Llegadas escalonadas: Mica y Diego ~16:30h, demás ~17:25h. Metro L3
+            al centro (~40 min).<br /><span class="alert"
+              >Final del Mundial a las 20:00h.</span
+            >
+            Terraza en Monastiraki o Psiri — llegar 1h antes. Cerveza Mythos +
+            patatas con tzatziki.
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Domingo 19 Julio</div>
+          <div class="day-title">La Acrópolis — y yogur griego</div>
+          <div class="day-text">
+            Abren a las 8h. Reservar online (€30), ir temprano antes del calor
+            brutal. Las Cariátides del Erecteion llevan el techo 2.500 años.<br />Yogur
+            griego con miel en Plaka — pedir el de leche de oveja (probato) con
+            nueces.<br />Noche: Monte Licabeto — funicular o 20 min a pie.
+            Vistas 360° de la ciudad.
+          </div>
+        </div>
+        <div class="ph">
+          <img
+            src="photos/cariatides.png"
+            alt="Las Cariátides"
+            style="object-position: center 30%; height: 38mm"
+          />
+          <div class="cap">
+            Las Cariátides del Erecteion — llevan cargando el techo 2.500 años
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Lunes 20 Julio</div>
+          <div class="day-title">Mañana libre · Ferry a Paros</div>
+          <div class="day-text">
+            Ágora Antigua — donde Sócrates molestaba a la gente hace 2.500 años.
+            Almuerzo en El Pireo — pulpo a la brasa frente al agua.
+          </div>
+        </div>
+        <div
+          class="tb"
+          style="margin-top: 4px"
+        >
+          <div class="tr">
+            <span class="tm">17:30h</span
+            ><span class="td">Embarque en El Pireo · Llegar 45 min antes</span>
+          </div>
+          <div class="tr">
+            <span class="tm">~21:30h</span
+            ><span class="td"
+              >Llegada a Parikia, Paros · Check-in Aegean Feelings,
+              Naoussa</span
+            >
+          </div>
+        </div>
+        <div
+          class="tip"
+          style="margin-top: 6px"
+        >
+          <div class="tip-label">¿Sabías que...?</div>
+          <div class="tip-item">
+            El Partenón se construyó sin un solo clavo en solo 9 años.
+          </div>
+          <div class="tip-item">
+            Originalmente estaba pintado de azul, rojo y amarillo. El mármol
+            blanco es por el tiempo.
+          </div>
+          <div class="tip-item">
+            En 1687 los otomanos lo usaban de polvorín. Un cañonazo veneciano lo
+            explotó.
+          </div>
+          <div class="tip-item">
+            Las esculturas del friso están en el British Museum — para gran
+            enfado griego.
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">02</span>
+      </div>
     </div>
-    <div class="dest-dates">18 – 20 Jul</div>
-  </div>
-  <div class="body">
-    <p style="font-size:7.5pt;color:var(--mid);line-height:1.5;margin-bottom:5px">Hace 2.500 años, desde aquí salieron la democracia, la filosofía y los Juegos Olímpicos. Hoy el Partenón asoma entre edificios modernos y las tabernas sirven souvlaki bajo el mismo cielo que vio a Sócrates.</p>
-    <div class="slabel">Itinerario</div>
-    <div class="day">
-      <div class="day-date">Sábado 18 Julio</div>
-      <div class="day-title">Llegada — y la Final del Mundial</div>
-      <div class="day-text">Llegadas escalonadas: Mica y Diego ~16:30h, demás ~17:25h. Metro L3 al centro (~40 min).<br><span class="alert">Final del Mundial a las 20:00h.</span> Terraza en Monastiraki o Psiri — llegar 1h antes. Cerveza Mythos + patatas con tzatziki.</div>
+    <!-- PÁG 3: PAROS -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Grecia 2025</span><span>Atenas · Paros · Santorini</span>
+      </div>
+      <div class="dest-banner">
+        <img
+          src="photos/paros.jpg"
+          alt="Paros"
+          style="object-position: center 40%"
+        />
+        <div class="dest-overlay">
+          <div class="dest-num">Destino 02</div>
+          <div class="dest-name">Paros</div>
+          <div class="dest-sub">La isla del mármol y Naoussa · 3 noches</div>
+        </div>
+        <div class="dest-dates">20 – 23 Jul</div>
+      </div>
+      <div class="body">
+        <p
+          style="
+            font-size: 7.5pt;
+            color: var(--mid);
+            line-height: 1.5;
+            margin-bottom: 5px;
+          "
+        >
+          Paros tiene lo que no tiene Santorini: autenticidad. Naoussa, donde
+          dormimos, es un puerto de pescadores con bares al agua, gatos por
+          todas partes (Sandra, toma nota) y algunos de los mejores restaurantes
+          de las Cícladas.
+        </p>
+        <div class="slabel">Itinerario</div>
+        <div class="day">
+          <div class="day-date">Martes 21 Julio</div>
+          <div class="day-title">Playas + Barbacoa épica</div>
+          <div class="day-text">
+            Por la mañana: alquilar quads o motos en Naoussa (~25-40€/día, carné
+            de conducir obligatorio). La mejor forma de moverse por la isla —
+            las carreteras son tranquilas y las vistas increíbles.<br /><strong
+              >Playas del norte:</strong
+            >
+            Kolymbithres (formaciones de granito pulido por el mar, únicas en el
+            mundo — ir pronto, se llena) · Santa Maria (aguas turquesa,
+            chiringuito, escuela de windsurf) · Lageri (la más tranquila, sin
+            servicios, llevar agua).<br />Almuerzo en algún chiringuito de playa
+            — pedir el pulpo a la brasa o el pescado fresco del día.<br /><span
+              class="alert"
+              >Barbacoa nocturna en el alojamiento.</span
+            >
+            Cordero, souvlaki y loukaniko (salchicha griega especiada). Vino
+            rosado local — Paros tiene viñedos propios desde la antigüedad.<br /><em
+              style="font-size: 7pt; color: #888"
+              >Nota para Fernando: los griegos no suelen dejar cucharas en las
+              mesas. Lo cual no significa que no lo intentes.</em
+            >
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Miércoles 22 Julio</div>
+          <div class="day-title">Day trip: Delos y Mikonos</div>
+          <div class="day-text">
+            Ferry desde Naoussa/Parikia a Mykonos por la mañana (hay conexión
+            directa, ~1h). Desde Mykonos el barco a Delos sale varias veces al
+            día (~30 min, €20 ida y vuelta).<br /><strong>Delos</strong> — isla
+            sagrada declarada patrimonio UNESCO. Aquí "nació" Apolo y Artemisa.
+            Nadie podía nacer ni morir en la isla: los partos y moribundos eran
+            trasladados a Rhenia. Hoy solo viven arqueólogos. Llevar sombrero,
+            agua y protector — no hay sombra ni tiendas. Destacan: la Terraza de
+            los Leones (siglo VII a.C.) y la Casa de Dioniso con los mosaicos
+            más grandes del mundo antiguo. Calcular 2h de visita.<br /><strong
+              >Mykonos</strong
+            >
+            — de vuelta, paseo por Chora: los cinco molinos de viento en Kato
+            Mili, el barrio de Alefkandra (la "Pequeña Venecia") con bares sobre
+            el agua, y las callejuelas laberínticas diseñadas para confundir a
+            los piratas.<br />Vuelta a Paros por la tarde. Cena en el puerto de
+            Naoussa — mesas sobre el agua. Cócteles en el Barbarossa Bar (justo
+            en la entrada del puerto medieval).
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Jueves 23 Julio</div>
+          <div class="day-title">Playa libre · Ferry a Santorini</div>
+          <div class="day-text">
+            Última mañana libre en Paros — Parikia Casco Antiguo merece una
+            vuelta: la Panagia Ekatontapiliani (iglesia del siglo IV, una de las
+            más antiguas de la cristiandad) y el mercadillo local. Buen momento
+            para comprar miel de tomillo de Paros (la mejor de las Cícladas),
+            aceitunas y queso local para el viaje.<br />A las 11h hay que estar
+            en el puerto de Parikia. Taxi desde Naoussa ~10-15€ o autobús local
+            (KTEL, €1.80). Llevar el billete del ferry descargado en el
+            móvil.<br /><span class="alert"
+              >Al llegar a Athinios (puerto de Santorini), los acantilados de la
+              caldera se elevan 300m sobre el barco. Es el puerto de entrada más
+              espectacular del mundo.</span
+            >
+          </div>
+        </div>
+        <div
+          class="tb"
+          style="margin-top: 4px"
+        >
+          <div class="tr">
+            <span class="tm">11:45h</span
+            ><span class="td">Embarque en Parikia · Llegar 45 min antes</span>
+          </div>
+          <div class="tr">
+            <span class="tm">~14:00h</span
+            ><span class="td"
+              >Athinios, Santorini · El puerto más dramático del mundo</span
+            >
+          </div>
+        </div>
+        <div
+          class="tip"
+          style="margin-top: 6px"
+        >
+          <div class="tip-label">¿Sabías que...?</div>
+          <div class="tip-item">
+            La Venus de Milo y la Victoria de Samotracia son de mármol de Paros.
+          </div>
+          <div class="tip-item">
+            La Crónica de Paros: estela con la historia de Grecia desde 1582
+            a.C.
+          </div>
+          <div class="tip-item">
+            El Gato del Egeo lleva aquí 3.000 años y ayudaba a los pescadores a
+            bordo.
+          </div>
+          <div class="tip-item">
+            Kolymbithres: formaciones de granito esculpidas por el mar únicas en
+            el mundo.
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">03</span>
+      </div>
     </div>
-    <div class="day">
-      <div class="day-date">Domingo 19 Julio</div>
-      <div class="day-title">La Acrópolis — y yogur griego</div>
-      <div class="day-text">Abren a las 8h. Reservar online (€30), ir temprano antes del calor brutal. Las Cariátides del Erecteion llevan el techo 2.500 años.<br>Yogur griego con miel en Plaka — pedir el de leche de oveja (probato) con nueces.<br>Noche: Monte Licabeto — funicular o 20 min a pie. Vistas 360° de la ciudad.</div>
+    <!-- PÁG 4: SANTORINI -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Grecia 2025</span><span>Atenas · Paros · Santorini</span>
+      </div>
+      <div
+        class="dest-banner"
+        style="height: 50mm"
+      >
+        <img
+          src="photos/santorini.jpg"
+          alt="Santorini"
+          style="object-position: center 30%"
+        />
+        <div class="dest-overlay">
+          <div class="dest-num">Destino 03</div>
+          <div class="dest-name">Santorini</div>
+          <div class="dest-sub">Lo que queda de un volcán · 4 noches</div>
+        </div>
+        <div class="dest-dates">23 – 27 Jul</div>
+      </div>
+      <div class="body">
+        <p
+          style="
+            font-size: 7.5pt;
+            color: var(--mid);
+            line-height: 1.5;
+            margin-bottom: 5px;
+          "
+        >
+          Al llegar a Athinios, los acantilados de la caldera se elevan 300m
+          sobre el barco. Estáis literalmente entrando dentro de un supervolcán
+          que explotó en el 1600 a.C. con 40 veces la potencia del Krakatoa. Lo
+          que hoy llamamos "Santorini" es lo que quedó del borde del cráter.
+        </p>
+        <div class="slabel">Llegada — Jueves 23 Julio</div>
+        <div class="tb">
+          <div class="tr">
+            <span class="tm">~14:00h</span
+            ><span class="td"
+              >Athinios, Santorini · Taxi organizado al hotel (~25-30€, ~20 min
+              a Pyrgos)</span
+            >
+          </div>
+          <div class="tr">
+            <span class="tm">Tarde</span
+            ><span class="td"
+              >Check-in Alleys Boutique Hotel &amp; Spa · Pyrgos, el pueblo más
+              alto de Santorini (362m)</span
+            >
+          </div>
+          <div class="tr">
+            <span class="tm">Tarde-noche</span
+            ><span class="td"
+              >Paseo por las callejuelas de Pyrgos — mucho menos turístico que
+              Oia, auténtico y tranquilo</span
+            >
+          </div>
+          <div class="tr">
+            <span class="tm">Noche</span
+            ><span class="td"
+              >Primer atardecer desde las murallas del castillo veneciano de
+              Pyrgos · Botella de Assyrtiko local</span
+            >
+          </div>
+        </div>
+        <div
+          class="tip"
+          style="margin-top: 6px"
+        >
+          <div class="tip-label">El volcán</div>
+          <div class="tip-item">
+            La erupción del 1600 a.C. fue 40 veces más potente que el Krakatoa.
+          </div>
+          <div class="tip-item">
+            Un escriba egipcio escribió: "El sol se ha ocultado y no da luz ni
+            calor".
+          </div>
+          <div class="tip-item">
+            Esta erupción inspiró el mito de la Atlántida de Platón.
+          </div>
+          <div class="tip-item">
+            Sigue siendo un volcán activo — última erupción en 1950.
+          </div>
+          <div class="tip-item">
+            Las cepas de vid se plantan en espiral para protegerse del viento
+            Meltemi.
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">04</span>
+      </div>
     </div>
-    <div class="ph">
-      <img src="grecia_img_caryatids.jpeg" alt="Las Cariátides" style="object-position:center 30%">
-      <div class="cap">Las Cariátides del Erecteion — llevan cargando el techo 2.500 años</div>
+    <!-- PÁG 5: DÍAS SANTORINI -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Grecia 2025</span><span>Atenas · Paros · Santorini</span>
+      </div>
+      <div class="body">
+        <div class="slabel">Itinerario Santorini</div>
+        <div class="day">
+          <div class="day-date">Viernes 24 Julio</div>
+          <div class="day-title">Fira y playas volcánicas</div>
+          <div class="day-text">
+            Mañana en <strong>Fira</strong>, la capital de Santorini (~15 km de
+            Pyrgos, taxi o autobús). Paseo por las calles de Ypapantis — el
+            borde del acantilado con vistas directas a la caldera. Tiendas,
+            museos y cafeterías con terrazas sobre el precipicio. La diferencia
+            de altura entre el pueblo y el mar es de 260m.<br />El funicular
+            desde el puerto antiguo (Fira Skala) sube en 2 minutos por €6 —
+            merece la pena bajar solo para verlo. O si sois valientes: 588
+            escalones que los burros suben cargados de turistas (decidid
+            vosotros).<br />Tarde: playas volcánicas.
+            <strong>Kamari</strong> tiene paseo marítimo, hamacas (~10€/día) y
+            restaurantes al lado del agua — la más organizada.
+            <strong>Perissa</strong> es más tranquila y larga (8 km de playa
+            negra).<br /><span class="alert"
+              >Chanclas obligatorias incluso en el agua. La arena volcánica
+              negra acumula calor y quema — literalmente.</span
+            ><br />Atardecer desde Fira sobre las islas Nea Kameni (el cono del
+            volcán activo) en el centro de la caldera.
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Sábado 25 Julio</div>
+          <div class="day-title">Viñedos, Akrotiri y Oia</div>
+          <div class="day-text">
+            Mañana: <strong>Santo Wines</strong> — bodega con terraza escalonada
+            directamente sobre la caldera. Cata de Assyrtiko desde ~€15/persona
+            (abierto desde las 10h). El Assyrtiko de Santorini es único en el
+            mundo: las cepas crecen en espiral sobre la lava para protegerse del
+            Meltemi, sin riego. Tiene Denominación de Origen propia.<br /><strong
+              >Akrotiri</strong
+            >
+            — la ciudad minoica enterrada bajo las cenizas del volcán en 1600
+            a.C., 1.600 años antes que Pompeya. Lo más increíble: no encontraron
+            ningún cadáver. La gente evacuó a tiempo. Los frescos originales
+            están en el Museo Nacional de Atenas pero las excavaciones son
+            espectaculares. Entrada ~€12, cerrado los lunes.<br />Tarde:
+            <strong>Oia</strong>, el pueblo más fotografiado de Grecia (11 km al
+            norte de Fira, taxi o autobús). Calles de casas blancas encima del
+            acantilado, tiendas de artesanía, Atlantis Books (una de las
+            librerías independientes más bonitas del mundo — sección en
+            español).<br /><span class="alert"
+              >Atardecer en el Castillo Veneziano de Oia — llegar mínimo 1 hora
+              antes. En julio el sol se pone hacia las 20:45h. Vale
+              absolutamente la pena la espera.</span
+            >
+          </div>
+        </div>
+        <div class="ph">
+          <img
+            src="photos/oia.webp"
+            alt="Oia, Santorini"
+            style="object-position: center 20%"
+          />
+          <div class="cap">
+            Oia — cúpulas azules sobre la caldera volcánica de 11 km de diámetro
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Domingo 26 Julio</div>
+          <div class="day-title">Relax y despedida</div>
+          <div class="day-text">
+            Mañana tranquila: desayuno largo, piscina infinity del Alleys o
+            sesión de spa. El hotel está en el punto más alto de Pyrgos — las
+            vistas son inigualables por la mañana.<br /><strong
+              >Catamarán a la caldera</strong
+            >
+            (~€65-80/persona, incluye almuerzo ligero y bebidas). Ruta habitual:
+            aguas termales de Nea Kameni (nadar en agua caliente volcánica a
+            35°C dentro del cráter activo), la isla de Palea Kameni, snorkeling
+            en la bahía de la caldera, y vuelta con vistas de los acantilados
+            desde el mar. Reservar con antelación — en julio se agotan.<br />Atardecer
+            alternativo: <strong>Imerovigli</strong>, el pueblo entre Fira y Oia
+            en el punto más alto del acantilado. Mucho menos turístico que Oia,
+            vistas incluso mejores. El paseo desde Fira dura ~30 min.<br /><span
+              class="alert"
+              >Cena de despedida — Selene Restaurant en Pyrgos (alta cocina
+              griega moderna, reservar) o Metaxy Mas en Exo Gonia (taberna
+              auténtica, sin turistas, la favorita de los locales). Reservar con
+              días de antelación.</span
+            >
+          </div>
+        </div>
+        <div class="day">
+          <div class="day-date">Lunes 27 Julio</div>
+          <div class="day-title">A casa</div>
+          <div class="day-text">
+            Último desayuno en Pyrgos — con calma, que se acabó.<br />Check-out
+            antes de las 11h (guardar maletas en recepción si el vuelo es
+            tarde). Tiempo libre para últimas compras: Assyrtiko para llevar a
+            casa, productos locales, recuerdos.<br />Aeropuerto JTR (Santorini)
+            está a ~15 min en taxi desde Pyrgos (~15€). El aeropuerto es pequeño
+            pero los vuelos internacionales tienen control de pasaporte — salir
+            con 2h de antelación mínimo y llevar pasaporte en mano.
+          </div>
+        </div>
+        <div class="tip">
+          <div class="tip-label">Tips para Santorini</div>
+          <div class="tip-item">
+            En Oia llegar 1h antes y buscar sitio en el castillo veneziano.
+          </div>
+          <div class="tip-item">
+            El aeropuerto JTR está a 15 min de Fira y 20 min de Pyrgos.
+          </div>
+          <div class="tip-item">
+            Las arenas de Kamari y Perissa acumulan calor — chanclas incluso en
+            el agua.
+          </div>
+          <div class="tip-item">
+            El Assyrtiko tiene DO propia: solo se produce en Santorini. Llevarse
+            unas botellas.
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">05</span>
+      </div>
     </div>
-    <div class="day">
-      <div class="day-date">Lunes 20 Julio</div>
-      <div class="day-title">Mañana libre · Ferry a Paros</div>
-      <div class="day-text">Ágora Antigua — donde Sócrates molestaba a la gente hace 2.500 años. Almuerzo en El Pireo — pulpo a la brasa frente al agua.</div>
+    <!-- PÁG 6: COMIDA + CIERRE -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Grecia 2025</span><span>Atenas · Paros · Santorini</span>
+      </div>
+      <div class="body">
+        <h2>Lo que vamos a comer</h2>
+        <div class="hr"></div>
+        <div
+          class="ph"
+          style="margin-bottom: 5px"
+        >
+          <img
+            src="photos/gyros.jpg"
+            alt="Gyros griego"
+            style="object-position: center center"
+          />
+          <div class="cap">
+            El gyros — souvlaki en pan de pita con tzatziki. El fast food
+            griego. Comeremos muchos.
+          </div>
+        </div>
+        <div class="g2">
+          <div class="fc">
+            <div class="fn">Souvlaki</div>
+            Brochetas a la brasa. El plato nacional.
+          </div>
+          <div class="fc">
+            <div class="fn">Spanakopita</div>
+            Pastel de espinacas y feta en masa filo.
+          </div>
+          <div class="fc">
+            <div class="fn">Dakos</div>
+            Pan tostado, tomate, feta y orégano silvestre.
+          </div>
+          <div class="fc">
+            <div class="fn">Pulpo a la brasa</div>
+            Cuelga al sol antes de asarse.
+          </div>
+          <div class="fc">
+            <div class="fn">Loukoumades</div>
+            Buñuelos con miel. El objetivo de Fernando.
+          </div>
+          <div class="fc">
+            <div class="fn">Assyrtiko</div>
+            El vino blanco volcánico de Santorini.
+          </div>
+          <div class="fc">
+            <div class="fn">Yogur griego</div>
+            De oveja, con miel y nueces.
+          </div>
+          <div class="fc">
+            <div class="fn">Baklava</div>
+            Hojaldre, nueces y miel.
+          </div>
+        </div>
+        <h2 style="margin-top: 6px">Los Meowlundus locales</h2>
+        <div class="hr"></div>
+        <p
+          style="
+            font-size: 7.5pt;
+            color: var(--mid);
+            line-height: 1.5;
+            margin-bottom: 5px;
+          "
+        >
+          Sandra, esta sección es para ti. Los
+          <strong>Gatos del Egeo</strong> llevan 3.000 años en las islas
+          griegas, son de los pocos gatos que no le tienen miedo al agua y están
+          protegidos por ley. Grecia es literalmente el paraíso de los gatos.
+        </p>
+        <h2 style="margin-top: 5px">Consejos prácticos</h2>
+        <div class="hr"></div>
+        <div class="ir">
+          <span class="lb">Ferries</span
+          ><span class="vl"
+            >Reservar online. Julio = temporada alta. Llegar al puerto 45 min
+            antes.</span
+          >
+        </div>
+        <div class="ir">
+          <span class="lb">Islas</span
+          ><span class="vl"
+            >Quad o moto para moverse. Carné obligatorio. En Santorini evitar el
+            coche.</span
+          >
+        </div>
+        <div class="ir">
+          <span class="lb">Meltemi</span
+          ><span class="vl"
+            >Viento del norte fuerte en julio, especialmente por las
+            tardes.</span
+          >
+        </div>
+        <div class="ir">
+          <span class="lb">Oia</span
+          ><span class="vl"
+            >Los 10-15 min DESPUÉS del ocaso tienen la mejor luz rosada sobre la
+            caldera.</span
+          >
+        </div>
+        <div class="ir">
+          <span class="lb">Batería</span
+          ><span class="vl"
+            >Batería externa imprescindible. Entre mapas y fotos el móvil muere
+            en horas.</span
+          >
+        </div>
+        <div class="ir">
+          <span class="lb">Cenar</span
+          ><span class="vl"
+            >Los griegos cenan tarde (21-22h). Las tabernas se llenan a partir
+            de las 20:30h.</span
+          >
+        </div>
+        <div style="border-top: 1px solid var(--rule); margin-top: 12px"></div>
+        <div class="fin">
+          <div class="greek">Καλό ταξίδι!</div>
+          <div class="es">¡Buen viaje, equipo!</div>
+          <div class="sign">Con cariño — Diego y Mica</div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">06</span>
+      </div>
     </div>
-    <div class="tb" style="margin-top:4px">
-      <div class="tr"><span class="tm">17:30h</span><span class="td">Embarque en El Pireo · Llegar 45 min antes</span></div>
-      <div class="tr"><span class="tm">~21:30h</span><span class="td">Llegada a Parikia, Paros · Check-in Aegean Feelings, Naoussa</span></div>
-    </div>
-    <div class="tip" style="margin-top:6px">
-      <div class="tip-label">¿Sabías que...?</div>
-      <div class="tip-item">El Partenón se construyó sin un solo clavo en solo 9 años.</div>
-      <div class="tip-item">Originalmente estaba pintado de azul, rojo y amarillo. El mármol blanco es por el tiempo.</div>
-      <div class="tip-item">En 1687 los otomanos lo usaban de polvorín. Un cañonazo veneciano lo explotó.</div>
-      <div class="tip-item">Las esculturas del friso están en el British Museum — para gran enfado griego.</div>
-    </div>
-  </div>
-  <div class="ftr"><span class="group">Los 6 Meowlundus</span><span class="num">02</span></div>
-</div>
-<!-- PÁG 3: PAROS -->
-<div class="pg">
-  <div class="hdr"><span>Grecia 2025</span><span>Atenas · Paros · Santorini</span></div>
-  <div class="dest-banner">
-    <img src="grecia_img_paros.jpeg" alt="Paros" style="object-position:center 40%">
-    <div class="dest-overlay">
-      <div class="dest-num">Destino 02</div>
-      <div class="dest-name">Paros</div>
-      <div class="dest-sub">La isla del mármol y Naoussa · 3 noches</div>
-    </div>
-    <div class="dest-dates">20 – 23 Jul</div>
-  </div>
-  <div class="body">
-    <p style="font-size:7.5pt;color:var(--mid);line-height:1.5;margin-bottom:5px">Paros tiene lo que no tiene Santorini: autenticidad. Naoussa, donde dormimos, es un puerto de pescadores con bares al agua, gatos por todas partes (Sandra, toma nota) y algunos de los mejores restaurantes de las Cícladas.</p>
-    <div class="slabel">Itinerario</div>
-    <div class="day">
-      <div class="day-date">Martes 21 Julio</div>
-      <div class="day-title">Playas + Barbacoa épica</div>
-      <div class="day-text">Por la mañana: alquilar quads o motos en Naoussa (~25-40€/día, carné de conducir obligatorio). La mejor forma de moverse por la isla — las carreteras son tranquilas y las vistas increíbles.<br><strong>Playas del norte:</strong> Kolymbithres (formaciones de granito pulido por el mar, únicas en el mundo — ir pronto, se llena) · Santa Maria (aguas turquesa, chiringuito, escuela de windsurf) · Lageri (la más tranquila, sin servicios, llevar agua).<br>Almuerzo en algún chiringuito de playa — pedir el pulpo a la brasa o el pescado fresco del día.<br><span class="alert">Barbacoa nocturna en el alojamiento.</span> Cordero, souvlaki y loukaniko (salchicha griega especiada). Vino rosado local — Paros tiene viñedos propios desde la antigüedad.<br><em style="font-size:7pt;color:#888">Nota para Fernando: los griegos no suelen dejar cucharas en las mesas. Lo cual no significa que no lo intentes.</em></div>
-    </div>
-    <div class="day">
-      <div class="day-date">Miércoles 22 Julio</div>
-      <div class="day-title">Day trip: Delos y Mikonos</div>
-      <div class="day-text">Ferry desde Naoussa/Parikia a Mykonos por la mañana (hay conexión directa, ~1h). Desde Mykonos el barco a Delos sale varias veces al día (~30 min, €20 ida y vuelta).<br><strong>Delos</strong> — isla sagrada declarada patrimonio UNESCO. Aquí "nació" Apolo y Artemisa. Nadie podía nacer ni morir en la isla: los partos y moribundos eran trasladados a Rhenia. Hoy solo viven arqueólogos. Llevar sombrero, agua y protector — no hay sombra ni tiendas. Destacan: la Terraza de los Leones (siglo VII a.C.) y la Casa de Dioniso con los mosaicos más grandes del mundo antiguo. Calcular 2h de visita.<br><strong>Mykonos</strong> — de vuelta, paseo por Chora: los cinco molinos de viento en Kato Mili, el barrio de Alefkandra (la "Pequeña Venecia") con bares sobre el agua, y las callejuelas laberínticas diseñadas para confundir a los piratas.<br>Vuelta a Paros por la tarde. Cena en el puerto de Naoussa — mesas sobre el agua. Cócteles en el Barbarossa Bar (justo en la entrada del puerto medieval).</div>
-    </div>
-    <div class="day">
-      <div class="day-date">Jueves 23 Julio</div>
-      <div class="day-title">Playa libre · Ferry a Santorini</div>
-      <div class="day-text">Última mañana libre en Paros — Parikia Casco Antiguo merece una vuelta: la Panagia Ekatontapiliani (iglesia del siglo IV, una de las más antiguas de la cristiandad) y el mercadillo local. Buen momento para comprar miel de tomillo de Paros (la mejor de las Cícladas), aceitunas y queso local para el viaje.<br>A las 11h hay que estar en el puerto de Parikia. Taxi desde Naoussa ~10-15€ o autobús local (KTEL, €1.80). Llevar el billete del ferry descargado en el móvil.<br><span class="alert">Al llegar a Athinios (puerto de Santorini), los acantilados de la caldera se elevan 300m sobre el barco. Es el puerto de entrada más espectacular del mundo.</span></div>
-    </div>
-    <div class="tb" style="margin-top:4px">
-      <div class="tr"><span class="tm">11:45h</span><span class="td">Embarque en Parikia · Llegar 45 min antes</span></div>
-      <div class="tr"><span class="tm">~14:00h</span><span class="td">Athinios, Santorini · El puerto más dramático del mundo</span></div>
-    </div>
-    <div class="tip" style="margin-top:6px">
-      <div class="tip-label">¿Sabías que...?</div>
-      <div class="tip-item">La Venus de Milo y la Victoria de Samotracia son de mármol de Paros.</div>
-      <div class="tip-item">La Crónica de Paros: estela con la historia de Grecia desde 1582 a.C.</div>
-      <div class="tip-item">El Gato del Egeo lleva aquí 3.000 años y ayudaba a los pescadores a bordo.</div>
-      <div class="tip-item">Kolymbithres: formaciones de granito esculpidas por el mar únicas en el mundo.</div>
-    </div>
-  </div>
-  <div class="ftr"><span class="group">Los 6 Meowlundus</span><span class="num">03</span></div>
-</div>
-<!-- PÁG 4: SANTORINI -->
-<div class="pg">
-  <div class="hdr"><span>Grecia 2025</span><span>Atenas · Paros · Santorini</span></div>
-  <div class="dest-banner" style="height:50mm">
-    <img src="grecia_img_santorini.jpeg" alt="Santorini" style="object-position:center 30%">
-    <div class="dest-overlay">
-      <div class="dest-num">Destino 03</div>
-      <div class="dest-name">Santorini</div>
-      <div class="dest-sub">Lo que queda de un volcán · 4 noches</div>
-    </div>
-    <div class="dest-dates">23 – 27 Jul</div>
-  </div>
-  <div class="body">
-    <p style="font-size:7.5pt;color:var(--mid);line-height:1.5;margin-bottom:5px">Al llegar a Athinios, los acantilados de la caldera se elevan 300m sobre el barco. Estáis literalmente entrando dentro de un supervolcán que explotó en el 1600 a.C. con 40 veces la potencia del Krakatoa. Lo que hoy llamamos "Santorini" es lo que quedó del borde del cráter.</p>
-    <div class="slabel">Llegada — Jueves 23 Julio</div>
-    <div class="tb">
-      <div class="tr"><span class="tm">~14:00h</span><span class="td">Athinios, Santorini · Taxi organizado al hotel (~25-30€, ~20 min a Pyrgos)</span></div>
-      <div class="tr"><span class="tm">Tarde</span><span class="td">Check-in Alleys Boutique Hotel &amp; Spa · Pyrgos, el pueblo más alto de Santorini (362m)</span></div>
-      <div class="tr"><span class="tm">Tarde-noche</span><span class="td">Paseo por las callejuelas de Pyrgos — mucho menos turístico que Oia, auténtico y tranquilo</span></div>
-      <div class="tr"><span class="tm">Noche</span><span class="td">Primer atardecer desde las murallas del castillo veneciano de Pyrgos · Botella de Assyrtiko local</span></div>
-    </div>
-    <div class="tip" style="margin-top:6px">
-      <div class="tip-label">El volcán</div>
-      <div class="tip-item">La erupción del 1600 a.C. fue 40 veces más potente que el Krakatoa.</div>
-      <div class="tip-item">Un escriba egipcio escribió: "El sol se ha ocultado y no da luz ni calor".</div>
-      <div class="tip-item">Esta erupción inspiró el mito de la Atlántida de Platón.</div>
-      <div class="tip-item">Sigue siendo un volcán activo — última erupción en 1950.</div>
-      <div class="tip-item">Las cepas de vid se plantan en espiral para protegerse del viento Meltemi.</div>
-    </div>
-  </div>
-  <div class="ftr"><span class="group">Los 6 Meowlundus</span><span class="num">04</span></div>
-</div>
-<!-- PÁG 5: DÍAS SANTORINI -->
-<div class="pg">
-  <div class="hdr"><span>Grecia 2025</span><span>Atenas · Paros · Santorini</span></div>
-  <div class="body">
-    <div class="slabel">Itinerario Santorini</div>
-    <div class="day">
-      <div class="day-date">Viernes 24 Julio</div>
-      <div class="day-title">Fira y playas volcánicas</div>
-      <div class="day-text">Mañana en <strong>Fira</strong>, la capital de Santorini (~15 km de Pyrgos, taxi o autobús). Paseo por las calles de Ypapantis — el borde del acantilado con vistas directas a la caldera. Tiendas, museos y cafeterías con terrazas sobre el precipicio. La diferencia de altura entre el pueblo y el mar es de 260m.<br>El funicular desde el puerto antiguo (Fira Skala) sube en 2 minutos por €6 — merece la pena bajar solo para verlo. O si sois valientes: 588 escalones que los burros suben cargados de turistas (decidid vosotros).<br>Tarde: playas volcánicas. <strong>Kamari</strong> tiene paseo marítimo, hamacas (~10€/día) y restaurantes al lado del agua — la más organizada. <strong>Perissa</strong> es más tranquila y larga (8 km de playa negra).<br><span class="alert">Chanclas obligatorias incluso en el agua. La arena volcánica negra acumula calor y quema — literalmente.</span><br>Atardecer desde Fira sobre las islas Nea Kameni (el cono del volcán activo) en el centro de la caldera.</div>
-    </div>
-    <div class="day">
-      <div class="day-date">Sábado 25 Julio</div>
-      <div class="day-title">Viñedos, Akrotiri y Oia</div>
-      <div class="day-text">Mañana: <strong>Santo Wines</strong> — bodega con terraza escalonada directamente sobre la caldera. Cata de Assyrtiko desde ~€15/persona (abierto desde las 10h). El Assyrtiko de Santorini es único en el mundo: las cepas crecen en espiral sobre la lava para protegerse del Meltemi, sin riego. Tiene Denominación de Origen propia.<br><strong>Akrotiri</strong> — la ciudad minoica enterrada bajo las cenizas del volcán en 1600 a.C., 1.600 años antes que Pompeya. Lo más increíble: no encontraron ningún cadáver. La gente evacuó a tiempo. Los frescos originales están en el Museo Nacional de Atenas pero las excavaciones son espectaculares. Entrada ~€12, cerrado los lunes.<br>Tarde: <strong>Oia</strong>, el pueblo más fotografiado de Grecia (11 km al norte de Fira, taxi o autobús). Calles de casas blancas encima del acantilado, tiendas de artesanía, Atlantis Books (una de las librerías independientes más bonitas del mundo — sección en español).<br><span class="alert">Atardecer en el Castillo Veneziano de Oia — llegar mínimo 1 hora antes. En julio el sol se pone hacia las 20:45h. Vale absolutamente la pena la espera.</span></div>
-    </div>
-    <div class="ph">
-      <img src="grecia_img_santorini.jpeg" alt="Oia, Santorini" style="object-position:center 20%">
-      <div class="cap">Oia — cúpulas azules sobre la caldera volcánica de 11 km de diámetro</div>
-    </div>
-    <div class="day">
-      <div class="day-date">Domingo 26 Julio</div>
-      <div class="day-title">Relax y despedida</div>
-      <div class="day-text">Mañana tranquila: desayuno largo, piscina infinity del Alleys o sesión de spa. El hotel está en el punto más alto de Pyrgos — las vistas son inigualables por la mañana.<br><strong>Catamarán a la caldera</strong> (~€65-80/persona, incluye almuerzo ligero y bebidas). Ruta habitual: aguas termales de Nea Kameni (nadar en agua caliente volcánica a 35°C dentro del cráter activo), la isla de Palea Kameni, snorkeling en la bahía de la caldera, y vuelta con vistas de los acantilados desde el mar. Reservar con antelación — en julio se agotan.<br>Atardecer alternativo: <strong>Imerovigli</strong>, el pueblo entre Fira y Oia en el punto más alto del acantilado. Mucho menos turístico que Oia, vistas incluso mejores. El paseo desde Fira dura ~30 min.<br><span class="alert">Cena de despedida — Selene Restaurant en Pyrgos (alta cocina griega moderna, reservar) o Metaxy Mas en Exo Gonia (taberna auténtica, sin turistas, la favorita de los locales). Reservar con días de antelación.</span></div>
-    </div>
-    <div class="day">
-      <div class="day-date">Lunes 27 Julio</div>
-      <div class="day-title">A casa</div>
-      <div class="day-text">Último desayuno en Pyrgos — con calma, que se acabó.<br>Check-out antes de las 11h (guardar maletas en recepción si el vuelo es tarde). Tiempo libre para últimas compras: Assyrtiko para llevar a casa, productos locales, recuerdos.<br>Aeropuerto JTR (Santorini) está a ~15 min en taxi desde Pyrgos (~15€). El aeropuerto es pequeño pero los vuelos internacionales tienen control de pasaporte — salir con 2h de antelación mínimo y llevar pasaporte en mano.</div>
-    </div>
-    <div class="tip">
-      <div class="tip-label">Tips para Santorini</div>
-      <div class="tip-item">En Oia llegar 1h antes y buscar sitio en el castillo veneziano.</div>
-      <div class="tip-item">El aeropuerto JTR está a 15 min de Fira y 20 min de Pyrgos.</div>
-      <div class="tip-item">Las arenas de Kamari y Perissa acumulan calor — chanclas incluso en el agua.</div>
-      <div class="tip-item">El Assyrtiko tiene DO propia: solo se produce en Santorini. Llevarse unas botellas.</div>
-    </div>
-  </div>
-  <div class="ftr"><span class="group">Los 6 Meowlundus</span><span class="num">05</span></div>
-</div>
-<!-- PÁG 6: COMIDA + CIERRE -->
-<div class="pg">
-  <div class="hdr"><span>Grecia 2025</span><span>Atenas · Paros · Santorini</span></div>
-  <div class="body">
-    <h2>Lo que vamos a comer</h2><div class="hr"></div>
-    <div class="ph" style="margin-bottom:5px">
-      <img src="grecia_img_gyros.jpeg" alt="Gyros griego" style="object-position:center center">
-      <div class="cap">El gyros — souvlaki en pan de pita con tzatziki. El fast food griego. Comeremos muchos.</div>
-    </div>
-    <div class="g2">
-      <div class="fc"><div class="fn">Souvlaki</div>Brochetas a la brasa. El plato nacional.</div>
-      <div class="fc"><div class="fn">Spanakopita</div>Pastel de espinacas y feta en masa filo.</div>
-      <div class="fc"><div class="fn">Dakos</div>Pan tostado, tomate, feta y orégano silvestre.</div>
-      <div class="fc"><div class="fn">Pulpo a la brasa</div>Cuelga al sol antes de asarse.</div>
-      <div class="fc"><div class="fn">Loukoumades</div>Buñuelos con miel. El objetivo de Fernando.</div>
-      <div class="fc"><div class="fn">Assyrtiko</div>El vino blanco volcánico de Santorini.</div>
-      <div class="fc"><div class="fn">Yogur griego</div>De oveja, con miel y nueces.</div>
-      <div class="fc"><div class="fn">Baklava</div>Hojaldre, nueces y miel.</div>
-    </div>
-    <h2 style="margin-top:6px">Los Meowlundus locales</h2><div class="hr"></div>
-    <p style="font-size:7.5pt;color:var(--mid);line-height:1.5;margin-bottom:5px">Sandra, esta sección es para ti. Los <strong>Gatos del Egeo</strong> llevan 3.000 años en las islas griegas, son de los pocos gatos que no le tienen miedo al agua y están protegidos por ley. Grecia es literalmente el paraíso de los gatos.</p>
-    <h2 style="margin-top:5px">Consejos prácticos</h2><div class="hr"></div>
-    <div class="ir"><span class="lb">Ferries</span><span class="vl">Reservar online. Julio = temporada alta. Llegar al puerto 45 min antes.</span></div>
-    <div class="ir"><span class="lb">Islas</span><span class="vl">Quad o moto para moverse. Carné obligatorio. En Santorini evitar el coche.</span></div>
-    <div class="ir"><span class="lb">Meltemi</span><span class="vl">Viento del norte fuerte en julio, especialmente por las tardes.</span></div>
-    <div class="ir"><span class="lb">Oia</span><span class="vl">Los 10-15 min DESPUÉS del ocaso tienen la mejor luz rosada sobre la caldera.</span></div>
-    <div class="ir"><span class="lb">Batería</span><span class="vl">Batería externa imprescindible. Entre mapas y fotos el móvil muere en horas.</span></div>
-    <div class="ir"><span class="lb">Cenar</span><span class="vl">Los griegos cenan tarde (21-22h). Las tabernas se llenan a partir de las 20:30h.</span></div>
-    <div style="border-top:1px solid var(--rule);margin-top:12px"></div>
-    <div class="fin">
-      <div class="greek">Καλό ταξίδι!</div>
-      <div class="es">¡Buen viaje, equipo!</div>
-      <div class="sign">Con cariño — Diego y Mica</div>
-    </div>
-  </div>
-  <div class="ftr"><span class="group">Los 6 Meowlundus</span><span class="num">06</span></div>
-</div>
-
-</body>
+  </body>
 </html>
