@@ -406,6 +406,376 @@
         size: A5;
         margin: 0;
       }
+
+      /* ── DÍA-PÁGINA: mix layout ── */
+      .momento { margin-bottom: 10px; }
+      .momento:last-child { margin-bottom: 0; }
+      .momento-label {
+        font-size: 5.5pt;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--gold);
+      }
+      .bloque {
+        margin-bottom: 7px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .bloque:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+      .bloque-lugar {
+        font-family: var(--font-display);
+        font-size: 9pt;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 3px;
+      }
+      .bloque-text {
+        font-size: 7pt;
+        color: var(--mid);
+        line-height: 1.65;
+      }
+      .momento-sep {
+        border: none;
+        border-top: 1px solid var(--rule);
+        margin: 10px 0;
+      }
+      .day-pg-banner {
+        position: relative;
+        height: 38mm;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .day-pg-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .day-pg-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(13,30,60,0.05) 0%, rgba(13,30,60,0.7) 55%, rgba(13,30,60,0.95) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 8px 12mm 10px;
+      }
+
+      /* ── AVE TICKET ── */
+      .ave-ticket {
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 8px;
+        border: 1px solid #d4b8d8;
+      }
+      .ave-head {
+        background: #8B1A6B;
+        color: white;
+        padding: 4px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .ave-head-logo {
+        font-size: 7pt;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .ave-head-type {
+        font-size: 5.5pt;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+      .ave-body {
+        background: #fdf8ff;
+        padding: 6px 10px 7px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .ave-station {
+        text-align: center;
+        flex: 1;
+      }
+      .ave-city {
+        font-family: var(--font-display);
+        font-size: 11pt;
+        font-weight: 900;
+        color: #8B1A6B;
+        line-height: 1;
+      }
+      .ave-time {
+        font-size: 7.5pt;
+        font-weight: 700;
+        color: var(--dark);
+        margin-top: 2px;
+      }
+      .ave-station-label {
+        font-size: 5pt;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #a06090;
+        margin-top: 1px;
+      }
+      .ave-mid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 2px;
+      }
+      .ave-mid-line {
+        width: 32px;
+        height: 1px;
+        background: #d4b8d8;
+        position: relative;
+      }
+      .ave-mid-line::after {
+        content: '▶';
+        position: absolute;
+        right: -4px;
+        top: -4px;
+        font-size: 5pt;
+        color: #8B1A6B;
+      }
+      .ave-mid-label {
+        font-size: 4.5pt;
+        color: #a06090;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .ave-footer {
+        background: #f5e8f7;
+        border-top: 1px dashed #d4b8d8;
+        padding: 3px 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .ave-footer span {
+        font-size: 5pt;
+        color: #8B1A6B;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* ── FERRY TICKET ── */
+      .ferry-ticket {
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 8px;
+        border: 1px solid #b8d4e8;
+      }
+      .ferry-head {
+        background: #0a6e8a;
+        color: white;
+        padding: 4px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .ferry-head-logo {
+        font-size: 7pt;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .ferry-head-type {
+        font-size: 5.5pt;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.8;
+      }
+      .ferry-body {
+        background: #f5fbff;
+        padding: 6px 10px 7px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .ferry-port {
+        text-align: center;
+        flex: 1;
+      }
+      .ferry-city {
+        font-family: var(--font-display);
+        font-size: 10pt;
+        font-weight: 900;
+        color: #0a6e8a;
+        line-height: 1;
+      }
+      .ferry-time {
+        font-size: 7.5pt;
+        font-weight: 700;
+        color: var(--dark);
+        margin-top: 2px;
+      }
+      .ferry-port-label {
+        font-size: 4.5pt;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #5a9ab5;
+        margin-top: 1px;
+      }
+      .ferry-mid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 3px;
+        min-width: 48px;
+      }
+      .ferry-mid-row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 3px;
+      }
+      .ferry-mid-line {
+        flex: 1;
+        height: 1px;
+        background: #b8d4e8;
+      }
+      .ferry-mid-icon {
+        font-size: 8pt;
+        line-height: 1;
+        color: #0a6e8a;
+        flex-shrink: 0;
+      }
+      .ferry-mid-label {
+        font-size: 4.5pt;
+        color: #5a9ab5;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .ferry-footer {
+        background: #e8f4fb;
+        border-top: 1px dashed #b8d4e8;
+        padding: 3px 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .ferry-footer span {
+        font-size: 5pt;
+        color: #0a6e8a;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* ── BOARDING PASS ── */
+      .boarding-wrap {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 9px;
+      }
+      .boarding {
+        flex: 1;
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        overflow: hidden;
+        font-size: 6pt;
+      }
+      .boarding-head {
+        background: var(--blue);
+        color: rgba(191,239,246,0.8);
+        font-size: 5pt;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 3px 7px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .boarding-body {
+        padding: 5px 7px 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .boarding-route {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .boarding-iata {
+        font-family: var(--font-display);
+        font-size: 14pt;
+        font-weight: 900;
+        color: var(--dark);
+        line-height: 1;
+      }
+      .boarding-arrow {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+      }
+      .boarding-arrow-line {
+        width: 100%;
+        height: 1px;
+        background: var(--rule);
+        position: relative;
+      }
+      .boarding-arrow-line::after {
+        content: '▶';
+        position: absolute;
+        right: -3px;
+        top: -4px;
+        font-size: 5pt;
+        color: var(--gold);
+      }
+      .boarding-arrow-label {
+        font-size: 5pt;
+        color: var(--muted);
+        letter-spacing: 0.5px;
+      }
+      .boarding-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px 8px;
+      }
+      .boarding-field-label {
+        font-size: 4.5pt;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1px;
+      }
+      .boarding-field-val {
+        font-size: 7pt;
+        font-weight: 700;
+        color: var(--dark);
+      }
+      .boarding-notch {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        margin: 0 -1px;
+      }
+      .boarding-notch-line {
+        flex: 1;
+        border-top: 1px dashed var(--rule);
+      }
+      .boarding-notch-circle {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f0f0f0;
+        border: 1px solid var(--rule);
+        flex-shrink: 0;
+      }
     </style>
   </head>
   <body>
@@ -812,47 +1182,18 @@
           bonitas. Y desde la colina del Licabeto, de noche, la ciudad se
           extiende hasta donde alcanza la vista.
         </p>
-        <div class="slabel">Itinerario</div>
+        <div class="slabel">3 días · 18–20 Julio</div>
         <div class="day">
-          <div class="day-date">Sábado 18 Julio</div>
-          <div class="day-title">Llegada — y la Final del Mundial</div>
-          <div class="day-text">
-            Llegadas escalonadas: Mica y Diego ~16:30h, demás ~17:25h. Metro L3
-            al centro (~40 min).<br /><span class="alert"
-              >Final del Mundial a las 20:00h.</span
-            >
-            Terraza en Monastiraki o Psiri — llegar 1h antes. Cerveza Mythos +
-            patatas con tzatziki.
-          </div>
+          <div class="day-date">Sáb 18</div>
+          <div class="day-title">Llegada + Final del Mundial</div>
         </div>
         <div class="day">
-          <div class="day-date">Domingo 19 Julio</div>
-          <div class="day-title">La Acrópolis — y yogur griego</div>
-          <div class="day-text">
-            Abren a las 8h. Reservar online (€30), ir temprano antes del calor
-            brutal. Las Cariátides del Erecteion llevan el techo 2.500 años.<br />Yogur
-            griego con miel en Plaka — pedir el de leche de oveja (probato) con
-            nueces.<br />Noche: Monte Licabeto — funicular o 20 min a pie.
-            Vistas 360° de la ciudad.
-          </div>
-        </div>
-        <div class="ph">
-          <img
-            src="photos/cariatides.png"
-            alt="Las Cariátides"
-            style="object-position: center 30%; height: 38mm"
-          />
-          <div class="cap">
-            Las Cariátides del Erecteion — llevan cargando el techo 2.500 años
-          </div>
+          <div class="day-date">Dom 19</div>
+          <div class="day-title">Acrópolis · Ágora · Licabeto · Gyros</div>
         </div>
         <div class="day">
-          <div class="day-date">Lunes 20 Julio</div>
-          <div class="day-title">Mañana libre · Ferry a Paros</div>
-          <div class="day-text">
-            Ágora Antigua — donde Sócrates molestaba a la gente hace 2.500 años.
-            Almuerzo en El Pireo — pulpo a la brasa frente al agua.
-          </div>
+          <div class="day-date">Lun 20</div>
+          <div class="day-title">Monastiraki · Ferry a Paros</div>
         </div>
         <div
           class="tb"
@@ -896,6 +1237,296 @@
         <span class="group">Los 6 Meowlundus</span><span class="num">02</span>
       </div>
     </div>
+    <!-- DÍA 1: SÁBADO 18 JULIO -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Atenas · Día 1</span><span>Sábado 18 Julio</span>
+      </div>
+      <div class="day-pg-banner">
+        <img src="photos/athens.avif" alt="Atenas" style="object-position: center 60%"/>
+        <div class="day-pg-overlay">
+          <div class="dest-num">Día 1 · Sábado 18 Julio</div>
+          <div class="dest-name">Llegada</div>
+          <div class="dest-sub">El viaje empieza aquí — y con Final del Mundial</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="momento">
+          <div class="momento-label">El viaje empieza</div>
+        </div>
+
+        <div class="ave-ticket">
+          <div class="ave-head">
+            <span class="ave-head-logo">Renfe</span>
+            <span class="ave-head-type">AVE · Alta Velocidad</span>
+          </div>
+          <div class="ave-body">
+            <div class="ave-station">
+              <div class="ave-city">León</div>
+              <div class="ave-time">08:14</div>
+              <div class="ave-station-label">Salida</div>
+            </div>
+            <div class="ave-mid">
+              <div class="ave-mid-line"></div>
+              <div class="ave-mid-label">2h 17m</div>
+            </div>
+            <div class="ave-station">
+              <div class="ave-city">Madrid</div>
+              <div class="ave-time">10:31</div>
+              <div class="ave-station-label">Llegada · Chamartín</div>
+            </div>
+          </div>
+          <div class="ave-footer">
+            <span>18 Jul 2026</span>
+            <span>AVE · Clase Turista</span>
+          </div>
+        </div>
+
+        <p style="font-size:7pt;color:var(--mid);line-height:1.6;margin-bottom:8px;">En Chamartín hay que coger Cercanías hasta el aeropuerto de Barajas — gratis con el billete del AVE, así que no hay que comprar nada. Facturación, control, y a esperar el vuelo. Que es donde empieza oficialmente el modo vacaciones. Mica y Diego mientras tanto salen desde Amsterdam.</p>
+
+        <div class="boarding-wrap">
+          <div class="boarding">
+            <div class="boarding-head">
+              <span>Mica &amp; Diego</span>
+              <span>KL 1955</span>
+            </div>
+            <div class="boarding-body">
+              <div class="boarding-route">
+                <div class="boarding-iata">AMS</div>
+                <div class="boarding-arrow">
+                  <div class="boarding-arrow-line"></div>
+                  <div class="boarding-arrow-label">✈ KLM</div>
+                </div>
+                <div class="boarding-iata">ATH</div>
+              </div>
+              <div class="boarding-notch">
+                <div class="boarding-notch-line"></div>
+                <div class="boarding-notch-circle"></div>
+                <div class="boarding-notch-line"></div>
+              </div>
+              <div class="boarding-fields">
+                <div>
+                  <div class="boarding-field-label">Sale</div>
+                  <div class="boarding-field-val">12:15</div>
+                </div>
+                <div>
+                  <div class="boarding-field-label">Llega</div>
+                  <div class="boarding-field-val">16:30</div>
+                </div>
+                <div>
+                  <div class="boarding-field-label">Fecha</div>
+                  <div class="boarding-field-val">18 JUL</div>
+                </div>
+                <div>
+                  <div class="boarding-field-label">Aerolínea</div>
+                  <div class="boarding-field-val">KLM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="boarding">
+            <div class="boarding-head">
+              <span>El resto del grupo</span>
+              <span>A3 701</span>
+            </div>
+            <div class="boarding-body">
+              <div class="boarding-route">
+                <div class="boarding-iata">MAD</div>
+                <div class="boarding-arrow">
+                  <div class="boarding-arrow-line"></div>
+                  <div class="boarding-arrow-label">✈ directo</div>
+                </div>
+                <div class="boarding-iata">ATH</div>
+              </div>
+              <div class="boarding-notch">
+                <div class="boarding-notch-line"></div>
+                <div class="boarding-notch-circle"></div>
+                <div class="boarding-notch-line"></div>
+              </div>
+              <div class="boarding-fields">
+                <div>
+                  <div class="boarding-field-label">Sale</div>
+                  <div class="boarding-field-val">13:00</div>
+                </div>
+                <div>
+                  <div class="boarding-field-label">Llega</div>
+                  <div class="boarding-field-val">17:25</div>
+                </div>
+                <div>
+                  <div class="boarding-field-label">Fecha</div>
+                  <div class="boarding-field-val">18 JUL</div>
+                </div>
+                <div>
+                  <div class="boarding-field-label">Aerolínea</div>
+                  <div class="boarding-field-val">Aegean</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="momento">
+          <div class="momento-label">Tarde</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Llegada a Atenas</div>
+            <div class="bloque-text">Después de un largo viaje — tren, avión, aeropuerto —, Mica y Diego son los primeros en aterrizar. Llevan un rato esperando ansiosamente vuestra llegada. Cuando llega el resto del grupo, primer abrazo colectivo en el aeropuerto de Atenas, que no es mal sitio para empezar. Cogemos el metro juntos, Línea 3 directa al centro, unos 40 minutos. Dejamos las maletas en el hotel y salimos a dar la primera vueltita por Atenas.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Noche</div>
+          <div class="bloque">
+            <div class="bloque-lugar">¿Final del Mundial?</div>
+            <div class="bloque-text">A las 20:00 hay Final del Mundial. Según la actuación de Españita a lo largo del torneo, puede que tengamos que verla sí o sí — en ese caso, terraza en Monastiraki o Psiri, cerveza Mythos fría y patatas con tzatziki, y a rezar. Si España no llega a la final tenemos plansito B preparado: cena tranquila por el barrio y primer paseo nocturno por Monastiraki, donde la Acrópolis se ve iluminada de fondo y los gatos campan a sus anchas.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">03</span>
+      </div>
+    </div>
+
+    <!-- DÍA 2: DOMINGO 19 JULIO -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Atenas · Día 2</span><span>Domingo 19 Julio</span>
+      </div>
+      <div class="day-pg-banner">
+        <img src="photos/acropolis.jpg" alt="La Acrópolis" style="object-position: center 65%"/>
+        <div class="day-pg-overlay">
+          <div class="dest-num">Día 2 · Domingo 19 Julio</div>
+          <div class="dest-name">La Acrópolis</div>
+          <div class="dest-sub">El Ágora, el Licabeto y el mejor gyros de la vida</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="momento">
+          <div class="momento-label">Mañana</div>
+          <div class="bloque">
+            <div class="bloque-lugar">La Acrópolis</div>
+            <div class="bloque-text">Entrada reservada para las 10 — a esa hora todavía no aplasta el calor, que luego se pone de verdad serio. Agua y gorra son obligatorias, no es broma. Ahí arriba está el Partenón, que tardó nueve años en construirse en el siglo V a.C. y lleva 2.500 mirando la ciudad. También el Erecteion con las Cariátides — seis tías de mármol que llevan cargando el techo desde el 421 a.C., que es una barbaridad. Las que se ven son copias; las originales están en el museo de abajo. Y por el camino, gatos. Hay gatos por toda la Acrópolis, tomando el sol en las piedras como si el sitio fuese suyo, que básicamente lo es.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Tarde</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Comida en Plaka</div>
+            <div class="bloque-text">Bajamos a comer a Plaka — el barrio más antiguo de Atenas, calles empedradas, estrechas, buganvillas por todos lados, muy bonito. Taverna, ensalada griega, souvlaki. Y hay que pedir el freddo cappuccino: café con hielo que inventaron aquí y que en ningún otro sitio sabe igual, no sé por qué pero es así.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Ágora Antigua</div>
+            <div class="bloque-text">Por la tarde bajamos al Ágora Antigua, que era básicamente el centro de todo en la Atenas clásica — aquí se inventó la democracia, aquí juzgaron a Sócrates (y lo condenaron a muerte, que tampoco salió bien), aquí debatían los filósofos. Tiene mucho menos turismo que la Acrópolis, hay árboles y sombra, y un templo de Hefesto que lleva 2.500 años entero con sus columnas. También hay bastantes gatos aquí.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Noche</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Monte Licabeto</div>
+            <div class="bloque-text">Para el atardecer subimos al Licabeto, el punto más alto de Atenas. Funicular o 20 minutos andando. Hay que llegar antes de que se ponga el sol — la vista desde arriba es de 360°, con la ciudad entera a los pies, el Partenón iluminado y el mar al fondo. Probablemente el mejor momento del viaje en Atenas.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Gyros + tienditas + Akulames</div>
+            <div class="bloque-text">Bajamos a cenar gyros de cerdo en Monastiraki — los mejores son los sitios más cutres y de toda la vida. Después callejeamos por Plaka, miramos las tienditas, compramos lo que haya que comprar. Y para terminar el día: yogur griego en Akulames. Pedir el probato — de leche de oveja —, con miel y nueces. No hay mejor final.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">04</span>
+      </div>
+    </div>
+
+    <!-- DÍA 3: LUNES 20 JULIO -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Atenas · Día 3</span><span>Lunes 20 Julio</span>
+      </div>
+      <div class="day-pg-banner">
+        <img src="photos/atenas_noche.avif" alt="Atenas de noche" onerror="this.style.background='linear-gradient(135deg,#0d5eaf,#0a2540)';this.style.display='block';this.removeAttribute('onerror')" style="object-position: center 50%"/>
+        <div class="day-pg-overlay">
+          <div class="dest-num">Día 3 · Lunes 20 Julio</div>
+          <div class="dest-name">Nos vamos</div>
+          <div class="dest-sub">Última mañana en Atenas · Ferry a Paros</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="momento">
+          <div class="momento-label">Mañana</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Mañana libre — cada uno a su ritmo</div>
+            <div class="bloque-text">Sin agenda fija. Hay varias opciones sobre la mesa según las ganas y la energía que quede:</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Tiendas y paseo por el centro</div>
+            <div class="bloque-text">Monastiraki, Ermou, Plaka — lo de siempre pero sin prisas. Souvenirs pendientes, ropa, lo que sea. La opción más tranquila y perfectamente válida.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Ágora Romana</div>
+            <div class="bloque-text">Distinta al Ágora Antigua que vimos el domingo — esta la construyeron los romanos cuando conquistaron Atenas en el siglo I a.C. Más pequeña, menos gente, y tiene la Torre de los Vientos que lleva en pie desde el 50 a.C. y fue reloj, calendario y veleta a la vez.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Estadio Panatenaico</div>
+            <div class="bloque-text">El único estadio del mundo construido completamente en mármol blanco. Aquí se celebraron los primeros Juegos Olímpicos modernos en 1896. Se puede bajar a la pista y correr una vuelta, que es una experiencia bastante absurda y bastante guay a la vez.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Templo de Zeus Olímpico</div>
+            <div class="bloque-text">El templo más grande de la Grecia antigua — tardaron 650 años en terminarlo. De las 104 columnas originales solo quedan 15 en pie, pero son enormes. Está al lado del Panatenaico así que se pueden combinar sin problema.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Tarde · El ferry</div>
+        </div>
+
+        <div class="ferry-ticket">
+          <div class="ferry-head">
+            <span class="ferry-head-logo">Blue Star Ferries</span>
+            <span class="ferry-head-type">⚓ Blue Star 1</span>
+          </div>
+          <div class="ferry-body">
+            <div class="ferry-port">
+              <div class="ferry-city">Piraeus</div>
+              <div class="ferry-time">17:30</div>
+              <div class="ferry-port-label">El Pireo · Atenas</div>
+            </div>
+            <div class="ferry-mid">
+              <div class="ferry-mid-row">
+                <div class="ferry-mid-line"></div>
+                <div class="ferry-mid-icon">🚢</div>
+                <div class="ferry-mid-line"></div>
+              </div>
+              <div class="ferry-mid-label">~4h</div>
+            </div>
+            <div class="ferry-port">
+              <div class="ferry-city">Paros</div>
+              <div class="ferry-time">21:30</div>
+              <div class="ferry-port-label">Parikia · Puerto</div>
+            </div>
+          </div>
+          <div class="ferry-footer">
+            <span>Lun 20 Jul 2026</span>
+            <span>9 pasajeros</span>
+            <span>Blue Star 1</span>
+          </div>
+        </div>
+
+        <div class="momento">
+          <div class="bloque">
+            <div class="bloque-lugar">El Pireo</div>
+            <div class="bloque-text">El metro desde el centro son unos 40 minutos — hay que llegar con margen porque los ferries griegos salen a su hora y no esperan. El Pireo no es un sitio bonito, es un puerto enorme de contenedores y ruido. Pero desde aquí salió la flota ateniense que destrozó a los persas en Salamina en el 480 a.C. Hoy eso no se nota mucho, pero algo tiene esperar el barco con las maletas sabiendo eso.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Llegada a Paros</div>
+            <div class="bloque-text">4 horas con el Egeo de fondo y llegamos a Parikia, el puerto principal de Paros. De ahí al alojamiento en Naoussa. Atenas se queda atrás — empieza la parte de playa.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">05</span>
+      </div>
+    </div>
+
     <!-- MAPA ATHENS -->
     <div
       class="pg"
@@ -1628,114 +2259,180 @@
           desde las formaciones de granito pulido de Kolymbithres hasta las
           aguas turquesa de Santa Maria.
         </p>
-        <div class="slabel">Itinerario</div>
+        <div class="slabel">3 días · 21–23 Julio</div>
         <div class="day">
-          <div class="day-date">Martes 21 Julio</div>
-          <div class="day-title">Playas + Barbacoa épica</div>
-          <div class="day-text">
-            Por la mañana: alquilar quads o motos en Naoussa (~25-40€/día, carné
-            de conducir obligatorio). La mejor forma de moverse por la isla —
-            las carreteras son tranquilas y las vistas increíbles.<br /><strong
-              >Playas del norte:</strong
-            >
-            Kolymbithres (formaciones de granito pulido por el mar, únicas en el
-            mundo — ir pronto, se llena) · Santa Maria (aguas turquesa,
-            chiringuito, escuela de windsurf) · Lageri (la más tranquila, sin
-            servicios, llevar agua).<br />Almuerzo en algún chiringuito de playa
-            — pedir el pulpo a la brasa o el pescado fresco del día.<br /><span
-              class="alert"
-              >Barbacoa nocturna en el alojamiento.</span
-            >
-            Cordero, souvlaki y loukaniko (salchicha griega especiada). Vino
-            rosado local — Paros tiene viñedos propios desde la antigüedad.<br /><em
-              style="font-size: 7pt; color: #888"
-              >Nota para Fernando: los griegos no suelen dejar cucharas en las
-              mesas. Lo cual no significa que no lo intentes.</em
-            >
-          </div>
+          <div class="day-date">Mar 21</div>
+          <div class="day-title">Pueblos · Kayak tour · Barbacoa en la villa</div>
         </div>
         <div class="day">
-          <div class="day-date">Miércoles 22 Julio</div>
-          <div class="day-title">Day trip: Delos y Mikonos</div>
-          <div class="day-text">
-            Ferry desde Naoussa/Parikia a Mykonos por la mañana (hay conexión
-            directa, ~1h). Desde Mykonos el barco a Delos sale varias veces al
-            día (~30 min, €20 ida y vuelta).<br /><strong>Delos</strong> — isla
-            sagrada declarada patrimonio UNESCO. Aquí "nació" Apolo y Artemisa.
-            Nadie podía nacer ni morir en la isla: los partos y moribundos eran
-            trasladados a Rhenia. Hoy solo viven arqueólogos. Llevar sombrero,
-            agua y protector — no hay sombra ni tiendas. Destacan: la Terraza de
-            los Leones (siglo VII a.C.) y la Casa de Dioniso con los mosaicos
-            más grandes del mundo antiguo. Calcular 2h de visita.<br /><strong
-              >Mykonos</strong
-            >
-            — de vuelta, paseo por Chora: los cinco molinos de viento en Kato
-            Mili, el barrio de Alefkandra (la "Pequeña Venecia") con bares sobre
-            el agua, y las callejuelas laberínticas diseñadas para confundir a
-            los piratas.<br />Vuelta a Paros por la tarde. Cena en el puerto de
-            Naoussa — mesas sobre el agua. Cócteles en el Barbarossa Bar (justo
-            en la entrada del puerto medieval).
-          </div>
+          <div class="day-date">Mié 22</div>
+          <div class="day-title">Tour Delos y Mykonos · Cena en Naoussa</div>
         </div>
         <div class="day">
-          <div class="day-date">Jueves 23 Julio</div>
+          <div class="day-date">Jue 23</div>
           <div class="day-title">Playa libre · Ferry a Santorini</div>
-          <div class="day-text">
-            Última mañana libre en Paros — Parikia Casco Antiguo merece una
-            vuelta: la Panagia Ekatontapiliani (iglesia del siglo IV, una de las
-            más antiguas de la cristiandad) y el mercadillo local. Buen momento
-            para comprar miel de tomillo de Paros (la mejor de las Cícladas),
-            aceitunas y queso local para el viaje.<br />A las 11h hay que estar
-            en el puerto de Parikia. Taxi desde Naoussa ~10-15€ o autobús local
-            (KTEL, €1.80). Llevar el billete del ferry descargado en el
-            móvil.<br /><span class="alert"
-              >Al llegar a Athinios (puerto de Santorini), los acantilados de la
-              caldera se elevan 300m sobre el barco. Es el puerto de entrada más
-              espectacular del mundo.</span
-            >
-          </div>
-        </div>
-        <div
-          class="tb"
-          style="margin-top: 4px"
-        >
-          <div class="tr">
-            <span class="tm">11:45h</span
-            ><span class="td">Embarque en Parikia · Llegar 45 min antes</span>
-          </div>
-          <div class="tr">
-            <span class="tm">~14:00h</span
-            ><span class="td"
-              >Athinios, Santorini · El puerto más dramático del mundo</span
-            >
-          </div>
-        </div>
-        <div
-          class="tip"
-          style="margin-top: 6px"
-        >
-          <div class="tip-label">¿Sabías que...?</div>
-          <div class="tip-item">
-            La Venus de Milo y la Victoria de Samotracia son de mármol de Paros.
-          </div>
-          <div class="tip-item">
-            La Crónica de Paros: estela con la historia de Grecia desde 1582
-            a.C.
-          </div>
-          <div class="tip-item">
-            El Gato del Egeo lleva aquí 3.000 años y ayudaba a los pescadores a
-            bordo.
-          </div>
-          <div class="tip-item">
-            Kolymbithres: formaciones de granito esculpidas por el mar únicas en
-            el mundo.
-          </div>
         </div>
       </div>
       <div class="ftr">
         <span class="group">Los 6 Meowlundus</span><span class="num">03</span>
       </div>
     </div>
+    <!-- DÍA 4: MARTES 21 JULIO -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Paros · Día 1</span><span>Martes 21 Julio</span>
+      </div>
+      <div class="day-pg-banner">
+        <img src="photos/paros.jpg" alt="Paros" style="object-position: center 40%"/>
+        <div class="day-pg-overlay">
+          <div class="dest-num">Día 4 · Martes 21 Julio</div>
+          <div class="dest-name">Paros</div>
+          <div class="dest-sub">Pueblos, kayak y barbacoa en la villa</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="momento">
+          <div class="momento-label">Mañana</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Ruta por los pueblos</div>
+            <div class="bloque-text">La mañana es para conocer el interior de la isla. Marpissa es un pueblo medieval encaramado en la colina, con calles tan estrechas que apenas cabe un burro, molinos de viento en lo alto y vistas de toda la costa este. Prodromos está justo al lado, más pequeño todavía y más tranquilo si cabe. Y si hay tiempo, Parikia — la capital — tiene el puerto principal y la Ekatontapyliani, una iglesia del siglo IV que lleva en pie 1.600 años.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Tarde</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Kayak tour</div>
+            <div class="bloque-text">Por la tarde el kayak tour. Paros vista desde el mar es otra cosa — las costas de roca, las calas escondidas que no se ven desde tierra, el agua azul turquesa de las Cícladas. Sin experiencia necesaria, van guiados. Probablemente el plan más activo del viaje.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Noche</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Barbacoa y piscina en la villa</div>
+            <div class="bloque-text">Noche en casa. Barbacoa, piscina y sin moverse. Cordero, souvlaki, loukaniko — la salchicha griega especiada que está absurdamente buena. Vino rosado de Paros, que tiene viñedos propios desde la antigüedad. Probablemente la mejor noche del viaje sin salir a ningún sitio.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">07</span>
+      </div>
+    </div>
+
+    <!-- DÍA 5: MIÉRCOLES 22 JULIO -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Paros · Día 2</span><span>Miércoles 22 Julio</span>
+      </div>
+      <div class="day-pg-banner">
+        <img src="photos/paros_2.webp" alt="Delos y Mykonos" style="object-position: center 50%"/>
+        <div class="day-pg-overlay">
+          <div class="dest-num">Día 5 · Miércoles 22 Julio</div>
+          <div class="dest-name">Delos &amp; Mykonos</div>
+          <div class="dest-sub">Tour de 10h desde Naoussa</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="momento">
+          <div class="momento-label">Todo el día · Tour en catamarán</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Salida desde Paros · ~1h a Delos</div>
+            <div class="bloque-text">Embarcamos por la mañana en un catamarán moderno con aire acondicionado. Una hora cruzando el Egeo y llegamos a Delos — una isla pequeña, sin habitantes, declarada Patrimonio UNESCO y básicamente una ruina arqueológica al aire libre. En la mitología griega aquí nacieron Apolo y Artemisa, lo que la convirtió en lugar sagrado durante siglos. La ley antigua era que nadie podía nacer ni morir en la isla: los partos y moribundos eran trasladados a Rhenia, la isla de al lado.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Delos · 3 horas</div>
+            <div class="bloque-text">Tres horas para explorar — la entrada se paga en la puerta y hay opción de contratar guía in situ si alguien quiere. Lo más impresionante es la Terraza de los Leones: nueve figuras de mármol del siglo VII a.C. mirando al mar. También la Casa de Dioniso con sus mosaicos. No hay sombra ni tiendas en toda la isla, así que agua y sombrero son obligatorios, no es broma.</div>
+          </div>
+          <div class="bloque">
+            <div class="bloque-lugar">Mykonos · 3,5 horas</div>
+            <div class="bloque-text">15 minutos de travesía de Delos a Mykonos. Tiempo libre en Chora: los molinos de viento en lo alto, la Pequeña Venecia con sus bares sobre el agua, las callejuelas laberínticas que según la leyenda se diseñaron para confundir a los piratas. Hay tiempo para comer, tomar café, curiosear tiendas. Luego 70 minutos de vuelta a Paros en el catamarán.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Noche</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Cena y cócteles en Naoussa</div>
+            <div class="bloque-text">De vuelta a Paros, cena en Naoussa — mesas prácticamente sobre el agua, barcos de pesca atracados al lado, muy bonito. Después nos pateamos el pueblo, que es pequeño y cabe entero en media hora pero tiene un encanto especial con todo cerrado de noche. Cócteles para terminar — el Barbarossa está justo en la entrada del puerto medieval y tiene buenas vistas.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">08</span>
+      </div>
+    </div>
+
+    <!-- DÍA 6: JUEVES 23 JULIO -->
+    <div class="pg">
+      <div class="hdr">
+        <span>Paros · Día 3</span><span>Jueves 23 Julio</span>
+      </div>
+      <div class="day-pg-banner">
+        <img src="photos/paros.jpg" alt="Paros playa" style="object-position: center 60%"/>
+        <div class="day-pg-overlay">
+          <div class="dest-num">Día 6 · Jueves 23 Julio</div>
+          <div class="dest-name">Nos vamos</div>
+          <div class="dest-sub">Última mañana en Paros · Ferry a Santorini</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="momento">
+          <div class="momento-label">Mañana</div>
+          <div class="bloque">
+            <div class="bloque-lugar">Playa libre</div>
+            <div class="bloque-text">La última mañana en Paros es libre — playa, piscina de la villa o simplemente desayunar tranquilamente. Sin plan fijo. Hay que tener las maletas listas antes de salir porque no volvemos al alojamiento.</div>
+          </div>
+        </div>
+        <hr class="momento-sep"/>
+        <div class="momento">
+          <div class="momento-label">Mediodía · El ferry</div>
+        </div>
+
+        <div class="ferry-ticket">
+          <div class="ferry-head">
+            <span class="ferry-head-logo">Blue Star Ferries</span>
+            <span class="ferry-head-type">⚓ Blue Star Delos</span>
+          </div>
+          <div class="ferry-body">
+            <div class="ferry-port">
+              <div class="ferry-city">Paros</div>
+              <div class="ferry-time">11:45</div>
+              <div class="ferry-port-label">Parikia · Puerto</div>
+            </div>
+            <div class="ferry-mid">
+              <div class="ferry-mid-row">
+                <div class="ferry-mid-line"></div>
+                <div class="ferry-mid-icon">🚢</div>
+                <div class="ferry-mid-line"></div>
+              </div>
+              <div class="ferry-mid-label">~3h</div>
+            </div>
+            <div class="ferry-port">
+              <div class="ferry-city">Santorini</div>
+              <div class="ferry-time">14:50</div>
+              <div class="ferry-port-label">Athinios · Puerto</div>
+            </div>
+          </div>
+          <div class="ferry-footer">
+            <span>Jue 23 Jul 2026</span>
+            <span>9 pasajeros</span>
+            <span>Blue Star Delos</span>
+          </div>
+        </div>
+
+        <div class="momento">
+          <div class="bloque">
+            <div class="bloque-lugar">Llegada a Santorini</div>
+            <div class="bloque-text">Al llegar a Athinios, el puerto de Santorini, los acantilados de la caldera se elevan 300 metros sobre el barco. Es probablemente la entrada de barco más espectacular del mundo — y la primera imagen que vas a tener de Santorini. Paros se queda atrás.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ftr">
+        <span class="group">Los 6 Meowlundus</span><span class="num">09</span>
+      </div>
+    </div>
+
     <!-- MAPA PAROS -->
     <div
       class="pg"
