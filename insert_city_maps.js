@@ -83,19 +83,15 @@ function buildMapPage(cityKey) {
 }
 
 // Read and patch HTML
-let html = fs.readFileSync('C:/Users/mclit/Downloads/grecia_librillo_v2.html', 'utf8');
+let html = fs.readFileSync('C:/Users/mclit/grecia/grecia_librillo_a5.html', 'utf8');
 
-// Remove old map pages (stop before INTRO markers so intros are preserved)
-html = html.replace(/\s*<!-- MAPA ATHENS -->[\s\S]*?(?=\s*<!-- INTRO PAROS)/, '');
+// Remove old Paros map page (stop before INTRO SANTORINI so intro is preserved)
 html = html.replace(/\s*<!-- MAPA PAROS -->[\s\S]*?(?=\s*<!-- INTRO SANTORINI)/, '');
-html = html.replace(/\s*<!-- MAPA SANTORINI -->[\s\S]*?(?=\s*<!-- PÁG 5)/, '');
 
-// Insert fresh pages
-for (const cityKey of ['athens', 'paros', 'santorini']) {
-  const page = buildMapPage(cityKey);
-  const marker = CITY_META[cityKey].insertBefore;
-  html = html.replace(marker, page + '\n' + marker);
-}
+// Insert fresh Paros page
+const page = buildMapPage('paros');
+const marker = CITY_META['paros'].insertBefore;
+html = html.replace(marker, page + '\n' + marker);
 
-fs.writeFileSync('C:/Users/mclit/Downloads/grecia_librillo_v2.html', html);
-console.log('Done — aligned full-bleed map pages inserted.');
+fs.writeFileSync('C:/Users/mclit/grecia/grecia_librillo_a5.html', html);
+console.log('Done — Paros map page updated in grecia_librillo_a5.html');

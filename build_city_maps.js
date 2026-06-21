@@ -83,7 +83,7 @@ const CITIES = [
   {
     name: 'paros',
     style: 'osm',
-    zoom: 13,
+    zoom: 12,
     centerLat: 37.0800,
     centerLon: 25.1900,
     tilesW: 4,

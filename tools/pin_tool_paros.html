@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Pin Tool — Paros</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: sans-serif; background:#1a1a2e; color:white; display:flex; gap:16px; padding:16px; min-height:100vh; }
+
+#map-wrap {
+  position: relative;
+  width: 560px;
+  flex-shrink: 0;
+  cursor: crosshair;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+#map-wrap img { width: 100%; display: block; }
+
+/* marker overlay — same aspect as image (807/569 = 141.83%) */
+#marker-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 141.8277%;
+  pointer-events: none;
+}
+#marker-inner { position: absolute; inset: 0; }
+
+.pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+.pin-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  flex-shrink: 0;
+}
+.pin-label {
+  background: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+#panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 240px;
+}
+h2 { font-size: 14px; font-weight: 600; color: #bfeff6; letter-spacing: 1px; text-transform: uppercase; }
+#instructions {
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #ccc;
+}
+#pin-list { display: flex; flex-direction: column; gap: 6px; }
+.pin-row {
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.pin-row .dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.pin-row .name { flex:1; font-weight:600; }
+.pin-row .coords { font-size:10px; color:#aaa; }
+.pin-row button { background:rgba(255,80,80,0.3); border:none; color:white; border-radius:4px; padding:2px 6px; cursor:pointer; font-size:11px; }
+.pin-row button:hover { background:rgba(255,80,80,0.6); }
+#add-form { display:flex; flex-direction:column; gap:6px; }
+#add-form label { font-size:11px; color:#aaa; text-transform:uppercase; letter-spacing:1px; }
+#add-form input, #add-form select {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size:13px;
+}
+#pending {
+  font-size:12px;
+  color:#e8a91a;
+  padding:6px 8px;
+  background:rgba(232,169,26,0.1);
+  border-radius:4px;
+  border:1px solid rgba(232,169,26,0.3);
+}
+button.primary {
+  background: #1a73e8;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+button.primary:hover { background:#1558b0; }
+#output {
+  display:none;
+  background: rgba(0,0,0,0.4);
+  border-radius:6px;
+  padding:10px;
+  font-family:monospace;
+  font-size:11px;
+  white-space:pre;
+  color:#bfeff6;
+  max-height:200px;
+  overflow:auto;
+}
+</style>
+</head>
+<body>
+
+<div id="map-wrap">
+  <img src="../mapa_paros.png" alt="Mapa de Paros">
+  <div id="marker-layer">
+    <div id="marker-inner"></div>
+  </div>
+</div>
+
+<div id="panel">
+  <h2>📍 Coloca los pins — Paros</h2>
+
+  <div id="instructions">
+    1. Haz clic en el mapa para colocar un pin<br>
+    2. Rellena el nombre y color<br>
+    3. Haz clic en <strong>Añadir pin</strong><br>
+    4. Cuando termines, pulsa <strong>Copiar JSON</strong> y pásame el resultado
+  </div>
+
+  <div id="add-form">
+    <div id="pending">← Haz clic en el mapa para seleccionar posición</div>
+    <label>Nombre del pin</label>
+    <input id="pin-name" type="text" placeholder="ej. Parikia 🛳️" />
+    <label>Color</label>
+    <select id="pin-color">
+      <option value="#1a73e8">Azul (visita / puerto)</option>
+      <option value="#d93025">Rojo (hotel / especial)</option>
+      <option value="#e8a91a">Amarillo (barrio / playa)</option>
+    </select>
+    <button class="primary" onclick="addPin()">Añadir pin</button>
+  </div>
+
+  <h2>Pins colocados</h2>
+  <div id="pin-list"></div>
+
+  <button class="primary" onclick="copyJSON()">📋 Copiar JSON para el librillo</button>
+  <div id="output"></div>
+</div>
+
+<script>
+let pendingX = null, pendingY = null;
+let pins = [];
+
+const mapWrap = document.getElementById('map-wrap');
+const markerInner = document.getElementById('marker-inner');
+
+// Image is 569×807 → aspect ratio height/width = 807/569 = 1.418277
+const IMG_ASPECT = 807 / 569;
+
+mapWrap.addEventListener('click', e => {
+  const rect = mapWrap.getBoundingClientRect();
+  const imgHeight = mapWrap.offsetWidth * IMG_ASPECT;
+  const x = Math.round(((e.clientX - rect.left) / rect.width * 100) * 10) / 10;
+  const y = Math.round(((e.clientY - rect.top) / imgHeight * 100) * 10) / 10;
+
+  pendingX = x;
+  pendingY = y;
+  document.getElementById('pending').textContent = '✓ Posición: x=' + x + '% y=' + y + '%  — Ahora dale un nombre';
+  document.getElementById('pin-name').focus();
+
+  const old = document.getElementById('temp-marker');
+  if (old) old.remove();
+  const tmp = document.createElement('div');
+  tmp.id = 'temp-marker';
+  tmp.style.cssText = 'position:absolute;left:' + x + '%;top:' + y + '%;transform:translate(-50%,-50%);width:16px;height:16px;background:orange;border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.6);pointer-events:none;';
+  markerInner.appendChild(tmp);
+});
+
+function addPin() {
+  if (pendingX === null) { alert('Haz clic en el mapa primero'); return; }
+  const name = document.getElementById('pin-name').value.trim();
+  if (!name) { alert('Ponle un nombre al pin'); return; }
+  const color = document.getElementById('pin-color').value;
+  pins.push({ label: name, color, x: pendingX, y: pendingY });
+  document.getElementById('pin-name').value = '';
+  document.getElementById('pending').textContent = '← Haz clic en el mapa para seleccionar posición';
+  const old = document.getElementById('temp-marker');
+  if (old) old.remove();
+  pendingX = null; pendingY = null;
+  renderPins();
+}
+
+function removePin(i) {
+  pins.splice(i, 1);
+  renderPins();
+}
+
+function renderPins() {
+  markerInner.innerHTML = '';
+  pins.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'pin';
+    div.style.left = p.x + '%';
+    div.style.top = p.y + '%';
+    div.innerHTML = '<div class="pin-dot" style="background:' + p.color + '"></div><div class="pin-label" style="color:' + p.color + '">' + p.label + '</div>';
+    markerInner.appendChild(div);
+  });
+
+  const list = document.getElementById('pin-list');
+  list.innerHTML = '';
+  pins.forEach((p, i) => {
+    const row = document.createElement('div');
+    row.className = 'pin-row';
+    row.innerHTML = '<div class="dot" style="background:' + p.color + '"></div>' +
+      '<span class="name">' + p.label + '</span>' +
+      '<span class="coords">x=' + p.x + '% y=' + p.y + '%</span>' +
+      '<button onclick="removePin(' + i + ')">✕</button>';
+    list.appendChild(row);
+  });
+}
+
+function copyJSON() {
+  const out = JSON.stringify(pins, null, 2);
+  navigator.clipboard.writeText(out).catch(() => {});
+  const el = document.getElementById('output');
+  el.style.display = 'block';
+  el.textContent = out;
+}
+
+renderPins();
+</script>
+</body>
+</html>
